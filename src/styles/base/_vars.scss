@@ -1,0 +1,22 @@
+@function rem($size) {
+   $remSize: calc($size / $font-size);
+   @return #{$remSize}rem;
+}
+
+// font params
+$font_size: 14px;
+$line_height: 24px;
+
+// colors
+$color_white: #FAFAFA;
+$color_black: #263238;
+
+$color_extradark_blue: #34515E;
+$color_dark_blue: #8EACBB;
+$color_light_blue: #CFD8DC;
+$color_extralight_blue: #ECEFF1;
+$color_red: #D32F2F;
+$color_dark_grey: #707070;
+$color_grey: #8D8D8D;
+$color_light_grey: #AFAFAF;
+$color_extralight_grey: #EFEFEF;

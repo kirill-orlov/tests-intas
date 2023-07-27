@@ -212,7 +212,7 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: `Это способ объявления переменных без использования ключевого слова "var".`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 2,
@@ -223,7 +223,7 @@ const DATA_TESTS = [
 						id: 3,
 						value: `Это функция, которая имеет доступ к переменным из своего лексического окружения, 
 						даже после завершения выполнения.`,
-						correct: false
+						correct: true
 					}
 				]
 			},
@@ -239,7 +239,7 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: `Observer`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 2,
@@ -249,7 +249,7 @@ const DATA_TESTS = [
 					{
 						id: 3,
 						value: `Promise`,
-						correct: false
+						correct: true
 					}
 				]
 			},
@@ -265,12 +265,12 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: `Это стандартный способ оформления HTML-кода на веб-страницах.`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 2,
 						value: `Это архитектурный стиль, который определяет правила для создания веб-сервисов.`,
-						correct: false
+						correct: true
 					},
 					{
 						id: 3,
@@ -291,12 +291,12 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: ` Это принцип проектирования баз данных для обеспечения их эффективности и целостности.`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 2,
 						value: `Это набор принципов, которые помогают написать чистый и поддерживаемый код.`,
-						correct: false
+						correct: true
 					},
 					{
 						id: 3,
@@ -329,7 +329,7 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: `Это увеличение производственной мощности предприятий и уровня технологий.`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 2,
@@ -339,7 +339,7 @@ const DATA_TESTS = [
 					{
 						id: 3,
 						value: `Это увеличение общего уровня цен на товары и услуги в экономике со временем.`,
-						correct: false
+						correct: true
 					}
 				]
 			},
@@ -477,12 +477,12 @@ const DATA_TESTS = [
 					{
 						id: 2,
 						value: `Передача полномочий и ответственности сотрудникам`,
-						correct: false
+						correct: true
 					},
 					{
 						id: 3,
 						value: `Зависимость от внешних ресурсов`,
-						correct: true
+						correct: false
 					},
 					{
 						id: 4,
@@ -529,7 +529,7 @@ const DATA_TESTS = [
 					{
 						id: 1,
 						value: `Передача полномочий и ответственности сотрудникам для принятия решений`,
-						correct: false
+						correct: true
 					},
 					{
 						id: 2,
@@ -539,7 +539,7 @@ const DATA_TESTS = [
 					{
 						id: 3,
 						value: `Применение инновационных стратегий для повышения производительности`,
-						correct: true
+						correct: false
 					}
 				]
 			}

@@ -2,4 +2,4 @@
 
 Node version v16.14.0
 
-[GitHub Pages](https://kirill-orlov.github.io/tests-intas/)
+[Watch on GitHub Pages](https://kirill-orlov.github.io/tests-intas/)

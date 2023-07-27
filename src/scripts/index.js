@@ -845,9 +845,16 @@ document.addEventListener('click', (event) => {
 		hideSidebar(sidebar)
 	}
 
-	// Test Desccription
+	// Test Description
 
 	if (target.classList.contains('sidebar__link')) {
+		const test = appInner.querySelector('.test')
+		const testResults = appInner.querySelector('.test-results')
+		if (test || testResults) {
+			const modal = document.getElementById('modal-exit')
+			openModal(modal)
+			return
+		}
 		const activeTest = app.querySelector('.sidebar__link--active')
 
 		if (activeTest) activeTest.classList.remove('sidebar__link--active')

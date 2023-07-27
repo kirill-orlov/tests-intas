@@ -8,11 +8,8 @@
     "start": "gulp server",
     "build": "gulp build",
     "build:dev": "cross-env NODE_ENV=development gulp build",
-    "deploy": "gulp deploy",
-    "deploy:build": "gulp deploy:build",
-    "deploy:build:dev": "cross-env NODE_ENV=development gulp deploy:build",
-    "deploy:watch": "gulp deploy:watch",
-    "deploy:watch:dev": "cross-env NODE_ENV=development gulp deploy:watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "fonts": "gulp generateFonts"
   },
   "repository": {

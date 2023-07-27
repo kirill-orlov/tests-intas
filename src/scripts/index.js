@@ -799,13 +799,17 @@ function startTimer(duration, displayElem) {
 }
 
 if (window.innerWidth > 768) {
-	const savedState = localStorage.getItem('sidebarState')
-	const { isOpen } = JSON.parse(savedState)
+	try {
+		const savedState = localStorage.getItem('sidebarState')
+		const { isOpen } = JSON.parse(savedState)
 
-	if (isOpen) {
-		showSidebar()
-	} else {
-		hideSidebar()
+		if (isOpen) {
+			showSidebar()
+		} else {
+			hideSidebar()
+		}
+	} catch (error) {
+		localStorage.setItem('sidebarState', JSON.stringify({ isOpen: false }))
 	}
 }
 

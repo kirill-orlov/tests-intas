@@ -21,6 +21,7 @@
   },
   "author": "Kirill V. Orlov",
   "license": "ISC",
+  "browserslist": "> 5%, last 3 versions",
   "type": "module",
   "devDependencies": {
     "@babel/core": "^7.19.1",

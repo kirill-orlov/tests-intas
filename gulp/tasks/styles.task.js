@@ -51,8 +51,8 @@ const stylesTask = () =>
 			gulpIf(
 				!constants.IS_DEV_MODE,
 				autoprefixer({
+					flexbox: true,
 					grid: true,
-					overrideBrowsersList: ['last 3 versions'],
 					cascade: true
 				})
 			)

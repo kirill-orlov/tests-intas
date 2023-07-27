@@ -1,0 +1,14 @@
+.footer {
+    width: 100%;
+    padding: rem(45px) 0;
+
+    .footer__content {
+        text-align: center;
+
+        .footer__copyright {
+            @include FontFamilyNunitoRegular;
+            color: $color_black;
+            font-size: rem(12px);
+        }
+    }
+}

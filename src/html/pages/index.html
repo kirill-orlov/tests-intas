@@ -1,8 +1,35 @@
 @@include("./meta/head.html")
 <body>
-@@include("./components/header.html")
+<div class="container">
+    @@include("./components/header.html")
 
-@@include("./components/footer.html")
-@@include("./meta/includeScripts.html")
+    <div class="app">
+        <div class="sidebar">
+            <div class="sidebar__header">
+                <div class="hamburger">
+                    <img class="hamburger__icon_open" src="@icons/hamburger.svg">
+                    <img class="hamburger__icon_close" src="@icons/arrow-left.svg">
+                </div>
+                <div class="sidebar__title">
+                    <a href="/">ТЕСТЫ</a>
+                </div>
+            </div>
+            <div class="sidebar__body">
+                <nav class="sidebar__nav">
+                    <ul class="sidebar__links">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="app__inner">
+            
+        </div>
+        @@include("./components/modals.html")
+    </div>
+    @@include("./components/footer.html")
+</div>
+
+    @@include("./meta/includeScripts.html")
+</div>
 </body>
 </html>

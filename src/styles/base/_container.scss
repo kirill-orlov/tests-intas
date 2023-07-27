@@ -1,0 +1,14 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include desktop_base {
+      margin: 0 rem(32px);
+      max-width: 100%;
+    }
+    
+    @include mobile {
+      margin: 0;
+      padding: 0 rem(24px);
+    }
+}

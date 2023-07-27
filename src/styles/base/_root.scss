@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-*:focus {
-  outline: none;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -15,6 +11,7 @@ body {
   font-size: $font_size;
   line-height: $line_height;
   color: $color-black;
+  background-color: #DFDFDF;
 }
 
 input {
@@ -35,12 +32,44 @@ p {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+section {
+  position: relative;
 }
 
 .no-scroll {
   overflow: hidden;
 }
 
-section {
-  position: relative;
+.btn-primary {
+  @include FontFamilyNunitoRegular;
+  background-color: $color-red;
+  color: #FFFFFF;
+  border-radius: rem(3px);
+  font-size: rem(14px);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary-outline {
+  @include FontFamilyNunitoRegular;
+  background-color: transparent;
+  border: 1px solid $color-red;
+  color: $color-red;
+  border-radius: rem(3px);
+  font-size: rem(14px);
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  @include FontFamilyNunitoRegular;
+  color: $color_dark_grey;
+  border: 1px solid $color_dark_grey;
+  border-radius: rem(3px);
+  font-size: rem(14px);
+  text-align: center;
+  cursor: pointer;
 }

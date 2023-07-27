@@ -1,1 +1,755 @@
-@font-face{font-family:Nunito;font-display:swap;src:url(../files/fonts/Nunito-Bold.woff2) format("woff2"),url(../files/fonts/Nunito-Bold.woff) format("woff");font-weight:700;font-style:normal}@font-face{font-family:Nunito;font-display:swap;src:url(../files/fonts/Nunito-Regular.woff2) format("woff2"),url(../files/fonts/Nunito-Regular.woff) format("woff");font-weight:400;font-style:normal}@font-face{font-family:Rubik;font-display:swap;src:url(../files/fonts/Rubik-Regular.woff2) format("woff2"),url(../files/fonts/Rubik-Regular.woff) format("woff");font-weight:400;font-style:normal}*{font-family:Nunito,sans-serif;font-weight:400;line-height:140%;box-sizing:border-box}:focus{outline:0}body{margin:0;padding:0;font-weight:400;font-size:14px;line-height:24px;color:#263238}input{background-color:inherit;font:inherit;border-width:0}a{text-decoration:none;color:inherit}p{margin:0}ul{margin:0;padding:0}.no-scroll{overflow:hidden}section{position:relative}
+@font-face {
+  font-family: Nunito;
+  font-display: swap;
+  src: url("../files/fonts/Nunito-Bold.woff2") format("woff2"), url("../files/fonts/Nunito-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Nunito;
+  font-display: swap;
+  src: url("../files/fonts/Nunito-Regular.woff2") format("woff2"), url("../files/fonts/Nunito-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Rubik;
+  font-display: swap;
+  src: url("../files/fonts/Rubik-Regular.woff2") format("woff2"), url("../files/fonts/Rubik-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1280px) {
+  .container {
+    margin: 0 2rem;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .container {
+    margin: 0;
+    padding: 0 1.5rem;
+  }
+}
+
+* {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #263238;
+  background-color: #DFDFDF;
+}
+
+input {
+  background-color: inherit;
+  font: inherit;
+  border-width: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section {
+  position: relative;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.btn-primary {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  background-color: #D32F2F;
+  color: #FFFFFF;
+  border-radius: 0.1875rem;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary-outline {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  background-color: transparent;
+  border: 1px solid #D32F2F;
+  color: #D32F2F;
+  border-radius: 0.1875rem;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  color: #707070;
+  border: 1px solid #707070;
+  border-radius: 0.1875rem;
+  font-size: 0.875rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  padding: 1.875rem 0;
+}
+.header .header__content {
+  text-align: center;
+}
+.header .header__content .header__title {
+  display: inline;
+  font-family: "Rubik", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  color: #D32F2F;
+  letter-spacing: 0.625rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.app {
+  height: 43.75rem;
+  background-color: #FAFAFA;
+  display: flex;
+  position: relative;
+}
+.app .sidebar {
+  height: 100%;
+  width: 3.125rem;
+  background-color: #ECEFF1;
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .app .sidebar {
+    height: 3.0625rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #FAFAFA;
+    z-index: 5;
+  }
+}
+@media screen and (max-width: 340px) {
+  .app .sidebar {
+    width: 1.875rem;
+  }
+}
+.app .sidebar .sidebar__header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #CFD8DC;
+  height: 3.125rem;
+}
+@media screen and (max-width: 768px) {
+  .app .sidebar .sidebar__header {
+    border-bottom: none;
+  }
+}
+.app .sidebar .sidebar__header .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.125rem;
+  width: 3.125rem;
+  padding: 1.125rem 1.125rem;
+  cursor: pointer;
+  z-index: 9;
+}
+.app .sidebar .sidebar__header .hamburger img {
+  pointer-events: none;
+}
+.app .sidebar .sidebar__header .hamburger .hamburger__icon_open {
+  display: block;
+}
+.app .sidebar .sidebar__header .hamburger .hamburger__icon_close {
+  display: none;
+}
+.app .sidebar .sidebar__header .sidebar__title {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.2s ease;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.app .sidebar .sidebar__header .sidebar__title a {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  font-size: 0.9375rem;
+  color: #34515E;
+}
+.app .sidebar .sidebar__body {
+  height: 38.125rem;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  margin: 1.25rem 0;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links {
+  padding: 0 0.5rem;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link {
+  display: flex;
+  align-items: center;
+  padding: 0.1875rem;
+  margin-top: 0.375rem;
+  border-radius: 0.1875rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link span {
+  display: inline-block;
+  height: 0.4375rem;
+  width: 0.5rem;
+  background-color: #263238;
+  border-radius: 50%;
+  margin-left: 0.4375rem;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link a {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.875rem;
+  color: #263238;
+  white-space: normal;
+  display: block;
+  width: 100%;
+  margin-left: 0.6875rem;
+  pointer-events: none;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link--active {
+  background-color: #D32F2F;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link--active span {
+  background-color: #FFFFFF;
+}
+.app .sidebar .sidebar__body .sidebar__nav .sidebar__links .sidebar__link--active a {
+  color: #FFFFFF;
+}
+.app .sidebar--active {
+  width: 15.625rem;
+}
+@media screen and (max-width: 768px) {
+  .app .sidebar--active {
+    height: 102%;
+    width: 100%;
+    background-color: #ECEFF1;
+  }
+}
+.app .sidebar--active .sidebar__header .sidebar__title {
+  opacity: 1;
+  visibility: visible;
+}
+.app .sidebar--active .sidebar__header .hamburger .hamburger__icon_open {
+  display: none;
+}
+.app .sidebar--active .sidebar__header .hamburger .hamburger__icon_close {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .app .sidebar--active .sidebar__header {
+    border-bottom: 1px solid #CFD8DC;
+  }
+}
+.app .sidebar--active .sidebar__body {
+  opacity: 1;
+  visibility: visible;
+}
+.app .app__inner {
+  width: 100%;
+  overflow-y: auto;
+}
+.app .app__inner .top-panel {
+  height: 3.125rem;
+  width: 100%;
+  border-bottom: 1px solid #CFD8DC;
+  background-color: #FAFAFA;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .top-panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .top-panel .top-panel__inner {
+    justify-content: end;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__left {
+    display: none;
+  }
+}
+@media screen and (max-width: 475px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__left {
+    display: none;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__left .top-panel__descr {
+  display: block;
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  font-size: 0.9375rem;
+  color: #CFCFCF;
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__left .top-panel__exit {
+  display: block;
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.75rem;
+  color: #8D8D8D;
+  cursor: pointer;
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__center {
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@media screen and (max-width: 992px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__center {
+    position: static;
+    transform: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__center {
+    display: none;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__center .top-panel__test-name {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  font-size: 1rem;
+  color: #263238;
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__right {
+  display: flex;
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.75rem;
+  color: #8D8D8D;
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__mobile-column {
+  display: flex;
+}
+@media screen and (max-width: 340px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__mobile-column {
+    flex-direction: column;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__reset span {
+  cursor: pointer;
+}
+@media screen and (max-width: 340px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__reset {
+    display: block;
+    max-width: 4.6875rem;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__reset, .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__progress {
+  padding-right: 10px;
+  border-right: 1px solid #8D8D8D;
+}
+@media screen and (max-width: 340px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__reset, .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__progress {
+    padding: 0;
+    border: none;
+  }
+}
+.app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__progress {
+  margin: 0 0.625rem;
+}
+@media screen and (max-width: 340px) {
+  .app .app__inner .top-panel .top-panel__inner .top-panel__right .top-panel__progress {
+    margin: 0;
+  }
+}
+.app .app__inner .test-mobile-content {
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.app .app__inner .test-mobile-content .test-mobile-content__mobile-info {
+  margin-top: 3.125rem;
+  padding: 1rem 1rem 0 1rem;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .test-mobile-content .test-mobile-content__mobile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.app .app__inner .test-mobile-content .test-mobile-content__mobile-info h2 {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 140%;
+  font-size: 1.5rem;
+  color: #263238;
+  margin: 0;
+}
+.app .app__inner .test-mobile-content .test-mobile-content__mobile-info a {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.75rem;
+  color: #8D8D8D;
+}
+.app .app__inner .test-mobile-content .test-mobile-content__mobile-info a img {
+  display: block;
+}
+.app .app__inner .test-start {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app .app__inner .test-start span {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  color: #263238;
+  font-size: 0.9375rem;
+}
+.app .app__inner .test-descr {
+  padding: 1rem 1rem 2rem 1rem;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .test-descr {
+    padding: 0.5rem 1rem 2rem 1rem;
+  }
+}
+.app .app__inner .test-descr p {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 1rem;
+}
+.app .app__inner .test-descr .test-descr-buttons {
+  margin-top: 1.25rem;
+}
+.app .app__inner .test-descr .test-descr-buttons a {
+  display: inline-block;
+  padding: 0.375rem 1.125rem;
+  margin-top: 0.625rem;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .test-descr .test-descr-buttons a {
+    margin-right: 0.625rem;
+  }
+}
+@media screen and (max-width: 575px) {
+  .app .app__inner .test-descr .test-descr-buttons a {
+    display: block;
+  }
+}
+.app .app__inner .test {
+  padding: 1rem 1rem 1rem 1rem;
+}
+.app .app__inner .test .question {
+  position: relative;
+  margin-top: 1.5625rem;
+}
+.app .app__inner .test .question .question__content span {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 1rem;
+  color: #263238;
+}
+.app .app__inner .test .question .question__answers {
+  margin-top: 0.75rem;
+  padding: 1rem 2.25rem;
+  background-color: #EFEFEF;
+}
+@media screen and (max-width: 992px) {
+  .app .app__inner .test .question .question__answers {
+    overflow-x: scroll;
+  }
+}
+.app .app__inner .test .question .question__answers .question__answers-list {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.app .app__inner .test .question .question__answers .question__answers-list .question__answer {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.875rem;
+  color: #263238;
+  position: relative;
+  padding-left: 1.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.app .app__inner .test .question .question__answers .question__answers-list .question__answer input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.app .app__inner .test .question .question__answers .question__answers-list .question__answer span {
+  position: absolute;
+  top: 2.2px;
+  left: 0;
+  height: 0.8125rem;
+  width: 0.8125rem;
+  background-color: #FFFFFF;
+  border: 1px solid #AFAFAF;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.app .app__inner .test .question .question__answers .question__answers-list .question__answer input:checked + span {
+  background-color: #FF6659;
+  border: 1px solid #D32F2F;
+}
+.app .app__inner .test .question:first-child {
+  margin: 0;
+}
+@media screen and (max-width: 992px) {
+  .app .app__inner .test .question--options .question__answer {
+    margin-right: 3.125rem;
+  }
+  .app .app__inner .test .question--options .question__answer:last-child {
+    padding-right: 2.25rem;
+  }
+}
+.app .app__inner .test .question--text .question__answers-list {
+  flex-direction: column;
+}
+.app .app__inner .test .question--text .question__answers-list .question__answer {
+  margin-top: 1.25rem;
+  white-space: normal !important;
+}
+.app .app__inner .test .question--text .question__answers-list .question__answer:first-child {
+  margin: 0;
+}
+.app .app__inner .bottom-panel {
+  margin-top: 1.5625rem;
+  border-top: 1px solid #CFD8DC;
+  padding: 1rem;
+}
+.app .app__inner .bottom-panel a {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.875rem;
+  padding: 0.4375rem 1.25rem;
+  display: inline-block;
+}
+@media screen and (max-width: 575px) {
+  .app .app__inner .bottom-panel a {
+    display: block;
+  }
+}
+.app .app__inner .test-results {
+  padding: 1rem 1rem 1rem 1rem;
+}
+.app .app__inner .test-results .test-results__info {
+  text-align: center;
+}
+.app .app__inner .test-results .test-results__info h2 {
+  margin: 0;
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 1.5rem;
+  color: #263238;
+  line-height: 48px;
+}
+.app .app__inner .test-results .test-results__info p {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.8125rem;
+  color: #8D8D8D;
+  line-height: 16px;
+}
+.app .app__inner .test-results .test-results__list {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .app .app__inner .test-results .test-results__list {
+    margin-top: 0.9375rem;
+  }
+}
+.app .app__inner .test-results .test-results__list .test-results__heading {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 1rem;
+  color: #8D8D8D;
+  margin-bottom: 0.9375rem;
+}
+.app .app__inner .test-results .test-results__list .test-results__item {
+  border-bottom: 1px dashed #E0E0E0;
+  padding: 0.625rem 0 1.25rem 0;
+}
+.app .app__inner .test-results .test-results__list .test-results__item .test-results__question {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 1rem;
+  color: #263238;
+}
+.app .app__inner .test-results .test-results__list .test-results__item .test-results__correct-answer, .app .app__inner .test-results .test-results__list .test-results__item .test-results__your-answer {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.8125rem;
+  color: #263238;
+  margin-top: 0.4375rem;
+  margin-left: 1.125rem;
+}
+@media screen and (max-height: 800px) {
+  .app {
+    height: 38.125rem;
+  }
+}
+@media screen and (max-height: 700px) {
+  .app {
+    height: 31.875rem;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(196, 196, 196, 0.7);
+  transition: all 0.2s ease-in-out;
+  z-index: 6;
+}
+.modal .modal__dialog {
+  width: 20rem;
+  height: auto;
+  padding: 1.25rem 1.25rem 1.875rem 1.25rem;
+  background-color: #FAFAFA;
+  border-radius: 0.1875rem;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.14);
+}
+@media screen and (max-width: 475px) {
+  .modal .modal__dialog {
+    width: 90%;
+  }
+}
+.modal .modal__dialog .modal__header {
+  width: 100%;
+  text-align: center;
+}
+.modal .modal__dialog .modal__header span {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.875rem;
+}
+.modal .modal__dialog .modal__body {
+  margin-top: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+.modal .modal__dialog .modal__body p {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  font-size: 0.75rem;
+}
+.modal .modal__dialog .modal__footer {
+  margin-top: 1.875rem;
+  width: 100%;
+  text-align: center;
+}
+.modal .modal__dialog .modal__footer a {
+  margin: 0 0.625rem;
+  padding: 0.375rem 1.125rem;
+}
+@media screen and (max-width: 340px) {
+  .modal .modal__dialog .modal__footer a {
+    display: block;
+    margin: 0.625rem 0.625rem;
+  }
+}
+
+.modal.modal--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer {
+  width: 100%;
+  padding: 2.8125rem 0;
+}
+.footer .footer__content {
+  text-align: center;
+}
+.footer .footer__content .footer__copyright {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  color: #263238;
+  font-size: 0.75rem;
+}
+/*# sourceMappingURL=styles.bundle.css.map */

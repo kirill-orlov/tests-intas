@@ -1,4 +1,10 @@
 @import "base/vars";
 @import "base/fonts";
 @import "base/breakpoints";
+@import "base/container";
 @import "base/root";
+
+@import "components/header";
+@import "components/app";
+@import "components/modal";
+@import "components/footer";

@@ -1,0 +1,553 @@
+.app {
+    height: rem(700px);
+    background-color: #FAFAFA;
+    display: flex;
+    position: relative;
+  
+    .sidebar {
+      height: 100%;
+      width: rem(50px);
+      background-color: $color_extralight_blue;
+      transition: all 0.2s ease-in-out;
+  
+      @include tablet_small {
+        height: rem(49px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $color_white;
+        z-index: 5;
+      }
+
+      @include mobile_small {
+        width: rem(30px);
+      }
+  
+      .sidebar__header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border-bottom: 1px solid $color_light_blue;
+        height: rem(50px);
+  
+        @include tablet_small {
+          border-bottom: none;
+        }
+  
+        .hamburger {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: rem(50px);
+          width: rem(50px);
+          padding: rem(18px) rem(18px);
+          cursor: pointer;
+          z-index: 9;
+
+          img {
+            pointer-events: none;
+          }
+  
+          .hamburger__icon_open {
+            display: block;
+          }
+  
+          .hamburger__icon_close {
+            display: none;
+          }
+        }
+  
+        .sidebar__title {
+          visibility: hidden;
+          opacity: 0;
+          width: 100%;
+          transition: all 0.2s ease;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          a {
+            @include FontFamilyNunitoBold;
+            font-size: rem(15px);
+            color: $color_extradark_blue;
+          }
+        }
+      }
+  
+      .sidebar__body {
+        height: rem(610px);
+        overflow-y: auto;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        margin: rem(20px) 0;
+  
+        .sidebar__nav {
+          
+          .sidebar__links {
+            padding: 0 rem(8px);
+  
+            .sidebar__link {
+              display: flex;
+              align-items: center;
+              padding: rem(3px);
+              margin-top: rem(6px);
+              border-radius: rem(3px);
+              background-color: transparent;
+              cursor: pointer;
+
+              span {
+                display: inline-block;
+                height: rem(7px);
+                width: rem(8px);
+                background-color: $color-black;
+                border-radius: 50%;
+                margin-left: rem(7px);
+              }
+  
+              a {
+                @include FontFamilyNunitoRegular;
+                font-size: rem(14px);
+                color: $color_black;
+                white-space: normal;
+                display: block;
+                width: 100%;
+                margin-left: rem(11px);
+                pointer-events: none;
+              }
+
+              &:last-child {
+
+              }
+            }
+  
+            .sidebar__link--active {
+              background-color: $color_red;
+              
+              span {
+                background-color: #FFFFFF;
+              }
+  
+              a {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .sidebar--active {
+      width: rem(250px);
+  
+      @include tablet_small {
+        height: 102%;
+        width: 100%;
+        background-color: $color_extralight_blue;
+      }
+  
+      .sidebar__header {
+  
+        .sidebar__title {
+          opacity: 1;
+          visibility: visible;
+        }
+  
+        .hamburger {
+  
+          .hamburger__icon_open {
+            display: none;
+          }
+  
+          .hamburger__icon_close {
+            display: block;
+          }
+        }
+  
+        @include tablet_small {
+          border-bottom: 1px solid $color_light_blue;
+        }
+      }
+  
+      .sidebar__body {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+    .app__inner {
+      width: 100%;
+      overflow-y: auto;
+
+      .top-panel {
+        height: rem(50px);
+        width: 100%;
+        border-bottom: 1px solid $color_light_blue;
+        background-color: $color_white;
+
+        @include tablet_small {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 4;
+        }
+
+        .top-panel__inner {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 rem(16px);
+          position: relative;
+
+          @include tablet_small {
+            justify-content: end;
+          }
+
+          .top-panel__left {
+
+            @include tablet_small {
+              display: none;
+            }
+
+            @include mobile_middle {
+              display: none;
+            }
+
+            .top-panel__descr {
+              display: block;
+              @include FontFamilyNunitoBold;
+              font-size: rem(15px);
+              color: #CFCFCF;
+            }
+
+            .top-panel__exit {
+              display: block;
+              @include FontFamilyNunitoRegular;
+              font-size: rem(12px);
+              color: $color_grey;
+              cursor: pointer;
+            }
+          }
+
+          .top-panel__center {
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+            @include tablet {
+              position: static;
+              transform: none;
+            }
+            
+            @include tablet_small {
+              display: none;
+            }
+            .top-panel__test-name {
+              @include FontFamilyNunitoBold;
+              font-size: rem(16px);
+              color: $color-black;
+            }
+          }
+
+          .top-panel__right {
+            display: flex;
+            @include FontFamilyNunitoRegular;
+            font-size: rem(12px);
+            color: $color_grey;
+
+            .top-panel__mobile-column {
+              display: flex;
+              
+              @include mobile_small {
+                flex-direction: column;
+              }
+            }
+
+            .top-panel__reset {
+
+              span {
+                cursor: pointer;
+              }
+              @include mobile_small {
+                display: block;
+                max-width: rem(75px);
+              }
+            }
+          
+            .top-panel__reset, .top-panel__progress {
+              padding-right: 10px;
+              border-right: 1px solid $color_grey;
+
+              @include mobile_small {
+                padding: 0;
+                border: none;
+              }
+            }
+
+            .top-panel__progress {
+              margin: 0 rem(10px);
+
+              @include mobile_small {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+      
+      .test-mobile-content {
+        position: relative;
+        height: auto;
+        width: 100%;
+
+        .test-mobile-content__mobile-info {
+          margin-top: rem(50px);
+          padding: rem(16px) rem(16px) 0 rem(16px);
+          display: none;
+
+          @include tablet_small {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          h2 {
+            @include FontFamilyNunitoBold;
+            font-size: rem(24px);
+            color: $color-black;
+            margin: 0;
+          }
+
+          a {
+            @include FontFamilyNunitoRegular;
+            font-size: rem(12px);
+            color: $color-grey;
+
+            img {
+              display: block;
+            }
+          }
+        }
+      }
+      .test-start {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          span {
+            @include FontFamilyNunitoRegular;
+            color: $color-black;
+            font-size: rem(15px); 
+          }
+        }
+
+      .test-descr {
+          padding: rem(16px) rem(16px) rem(32px) rem(16px);
+
+          @include tablet_small {
+            padding: rem(8px) rem(16px) rem(32px) rem(16px);
+          }
+
+          p {
+            @include FontFamilyNunitoRegular;
+            font-size: rem(16px);
+          }
+
+          .test-descr-buttons {
+            margin-top: rem(20px);
+
+            a {
+              display: inline-block;
+              padding: rem(6px) rem(18px);
+              margin-top: rem(10px);
+
+              @include tablet_small {
+                margin-right: rem(10px);
+              }
+
+              @include mobile {
+                display: block;
+              }
+            }
+          }
+      }
+
+      .test {
+          padding: rem(16px) rem(16px) rem(16px) rem(16px);
+
+          .question {
+            position: relative;
+            margin-top: rem(25px);
+            .question__content {
+              
+              span {
+                @include FontFamilyNunitoRegular;
+                font-size: rem(16px);
+                color: $color-black;
+              }
+            }
+
+            .question__answers {
+              margin-top: rem(12px);
+              padding: rem(16px) rem(36px);
+              background-color: $color_extralight_grey;
+
+              @include tablet {
+                overflow-x: scroll;
+              }
+              .question__answers-list {
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                .question__answer {
+                  @include FontFamilyNunitoRegular;
+                  font-size: rem(14px);
+                  color: $color_black;
+                  position: relative;
+                  padding-left: rem(20px);
+                  cursor: pointer;
+                  white-space: nowrap;
+
+                  input {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                  }
+
+                  span {
+                    position: absolute;
+                    top: 2.2px;
+                    left: 0;
+                    height: rem(13px);
+                    width: rem(13px);
+                    background-color: #FFFFFF;
+                    border: 1px solid $color_light_grey;
+                    border-radius: 50%;
+                    pointer-events: none;
+                  }
+
+                  input:checked + span {
+                    background-color: #FF6659;
+                    border: 1px solid $color_red;
+                  }
+                }
+              }
+            }
+
+            &:first-child {
+              margin: 0;
+            }
+          }
+          .question--options .question__answer {
+
+            @include tablet {
+              margin-right: rem(50px);
+    
+              &:last-child {
+                padding-right: rem(36px);
+              }
+            }
+          }
+    
+          .question--text .question__answers-list {
+            flex-direction: column;
+            
+              .question__answer {
+              margin-top: rem(20px);
+              white-space: normal!important;
+    
+              &:first-child {
+                margin: 0;
+              }
+            }
+          }
+      }
+      .bottom-panel {
+        margin-top: rem(25px);
+        border-top: 1px solid $color_light_blue;
+        padding: rem(16px);
+  
+        a {
+          @include FontFamilyNunitoRegular;
+          font-size: rem(14px);
+          padding: rem(7px) rem(20px);
+          display: inline-block;
+          
+          @include mobile {
+            display: block;
+          }
+        }
+      }
+
+      .test-results {
+        padding: rem(16px) rem(16px) rem(16px) rem(16px);
+
+        .test-results__info {
+          text-align: center;
+
+          h2 {
+            margin: 0;
+            @include FontFamilyNunitoRegular;
+            font-size: rem(24px);
+            color: $color-black;
+            line-height: 48px;
+          }
+
+          p {
+            @include FontFamilyNunitoRegular;
+            font-size: rem(13px);
+            color: $color-grey;
+            line-height: 16px;
+          }
+        }
+
+        .test-results__list {
+          width: 100%;
+
+          @include tablet_small {
+            margin-top: rem(15px);
+          }
+
+          .test-results__heading {
+            @include FontFamilyNunitoRegular;
+            font-size: rem(16px);
+            color: $color-grey;
+            margin-bottom: rem(15px);
+          }
+
+          .test-results__item {
+            border-bottom: 1px dashed #E0E0E0;
+            padding: rem(10px) 0 rem(20px) 0;
+
+            .test-results__question {
+              @include FontFamilyNunitoRegular;
+              font-size: rem(16px);
+              color: $color-black;
+            }
+
+            .test-results__correct-answer, .test-results__your-answer {
+              @include FontFamilyNunitoRegular;
+              font-size: rem(13px);
+              color: $color-black;
+              margin-top: rem(7px);
+              margin-left: rem(18px);
+            }
+          }
+        }
+      }
+  }
+
+  @media screen and (max-height: 800px) {
+    height: rem(610px);
+  }
+  @media screen and (max-height: 700px) {
+    height: rem(510px);
+  }
+}

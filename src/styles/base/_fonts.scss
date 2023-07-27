@@ -6,7 +6,7 @@
 	font-style: normal;
 }
 @mixin FontFamilyNunitoBold {
-	font-family: Nunito, sans-serif;
+	font-family: "Nunito", "Roboto", sans-serif;
 	font-weight: 700;
 	line-height: 140%;
 }
@@ -19,7 +19,7 @@
 	font-style: normal;
 }
 @mixin FontFamilyNunitoRegular {
-	font-family: Nunito, sans-serif;
+	font-family: "Nunito", "Roboto", sans-serif;
 	font-weight: 400;
 	line-height: 140%;
 }
@@ -32,7 +32,7 @@
 	font-style: normal;
 }
 @mixin FontFamilyRubikRegular {
-	font-family: Rubik, sans-serif;
+	font-family: "Rubik", "Roboto", sans-serif;
 	font-weight: 400;
 	line-height: 140%;
 }

@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    padding: rem(30px) 0;
+    
+    .header__content {
+        text-align: center;
+
+        .header__title {
+            display: inline;
+            @include FontFamilyRubikRegular;
+            color: $color_red;
+            letter-spacing: rem(10px);
+            font-size: rem(32px);
+            text-transform: uppercase;
+        }
+    }
+}

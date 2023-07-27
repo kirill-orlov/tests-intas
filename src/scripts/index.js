@@ -612,7 +612,7 @@ function renderTest(testObj) {
 					</div>
 					<div class="top-panel__mobile-column">
 						<div class="top-panel__progress">
-							<span>0/5</span>
+							<span>0/${testObj.questions.length}</span>
 						</div>
 						<div class="top-panel__timer">
 							<span>00:00:00</span>

@@ -81,6 +81,13 @@
         transition: all 0.2s ease-in-out;
         position: relative;
         margin: rem(20px) 0;
+
+        @media screen and (max-height: 800px) {
+          height: rem(520px);
+        }
+        @media screen and (max-height: 700px) {
+          height: rem(420px);
+        }
   
         .sidebar__nav {
           

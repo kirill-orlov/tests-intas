@@ -4,6 +4,7 @@ import userResponses from './userResponses'
 import appInstance from './app'
 import renderInstance from './render'
 import utilityInstance from './utility'
+import timerInstance from './timer'
 
 class Handlers extends DOMHelper {
 	changeAnswer = (event) => {
@@ -70,11 +71,12 @@ class Handlers extends DOMHelper {
 		if (target.classList.contains('btn-start') || target.classList.contains('btn-restart')) {
 			event.preventDefault()
 			userResponses.resetResponce()
+			timerInstance.resetTimer()
 			const currTest = utilityInstance.getCurrentTest()
 			renderInstance.renderTest(currTest)
 			renderInstance.renderQuestions(currTest)
 			const timerElem = document.querySelector('.top-panel__timer')
-			utilityInstance.startTimer(currTest.time, timerElem)
+			timerInstance.startTimer(currTest.time, timerElem)
 		}
 
 		// Reset Answers

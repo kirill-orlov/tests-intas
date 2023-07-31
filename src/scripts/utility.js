@@ -1,7 +1,6 @@
 import DATA_TESTS from './data'
 import DOMHelper from './domHelper'
 import userResponses from './userResponses'
-import renderInstance from './render'
 
 class Utility extends DOMHelper {
 	hideSidebar(sidebarElement) {
@@ -32,27 +31,6 @@ class Utility extends DOMHelper {
 			checkedInputs[i].checked = false
 		}
 		userResponses.resetResponce()
-	}
-
-	startTimer(duration, displayElem) {
-		let timer = duration
-		const currTest = this.getCurrentTest()
-		const timerInterval = setInterval(() => {
-			const hours = Math.floor(timer / 3600)
-			const minutes = Math.floor((timer % 3600) / 60)
-			const seconds = timer % 60
-
-			displayElem.textContent = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
-				seconds < 10 ? '0' : ''
-			}${seconds}`
-
-			timer--
-
-			if (timer < 0) {
-				clearInterval(timerInterval)
-				renderInstance.renderResults(currTest, userResponses.localResults)
-			}
-		}, 1000)
 	}
 }
 

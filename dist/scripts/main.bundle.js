@@ -583,6 +583,53 @@
   }();
   var userResponses = new UserResponses();
 
+  var Utility = /*#__PURE__*/function (_DOMHelper) {
+    _inherits(Utility, _DOMHelper);
+    var _super = _createSuper(Utility);
+    function Utility() {
+      _classCallCheck(this, Utility);
+      return _super.apply(this, arguments);
+    }
+    _createClass(Utility, [{
+      key: "hideSidebar",
+      value: function hideSidebar(sidebarElement) {
+        sidebarElement.classList.remove('sidebar--active');
+      }
+    }, {
+      key: "showSidebar",
+      value: function showSidebar(sidebarElement) {
+        sidebarElement.classList.add('sidebar--active');
+      }
+    }, {
+      key: "openModal",
+      value: function openModal(modalElement) {
+        modalElement.classList.add('modal--active');
+      }
+    }, {
+      key: "closeModal",
+      value: function closeModal(modalElement) {
+        modalElement.classList.remove('modal--active');
+      }
+    }, {
+      key: "getCurrentTest",
+      value: function getCurrentTest() {
+        var activeTest = this.appElement.querySelector('.sidebar__link--active');
+        return DATA_TESTS[activeTest.dataset.test];
+      }
+    }, {
+      key: "resetAnswers",
+      value: function resetAnswers() {
+        var checkedInputs = this.appElement.querySelectorAll('.question__answer-input');
+        for (var i = 0; i < checkedInputs.length; i++) {
+          checkedInputs[i].checked = false;
+        }
+        userResponses.resetResponce();
+      }
+    }]);
+    return Utility;
+  }(DOMHelper);
+  var utilityInstance = new Utility();
+
   var Render = /*#__PURE__*/function (_DOMHelper) {
     _inherits(Render, _DOMHelper);
     var _super = _createSuper(Render);
@@ -645,69 +692,40 @@
   }(DOMHelper);
   var renderInstance = new Render();
 
-  var Utility = /*#__PURE__*/function (_DOMHelper) {
-    _inherits(Utility, _DOMHelper);
-    var _super = _createSuper(Utility);
-    function Utility() {
-      _classCallCheck(this, Utility);
-      return _super.apply(this, arguments);
+  var Timer = /*#__PURE__*/function () {
+    function Timer() {
+      _classCallCheck(this, Timer);
+      this.timer = 0;
+      this.timerInterval = 0;
     }
-    _createClass(Utility, [{
-      key: "hideSidebar",
-      value: function hideSidebar(sidebarElement) {
-        sidebarElement.classList.remove('sidebar--active');
-      }
-    }, {
-      key: "showSidebar",
-      value: function showSidebar(sidebarElement) {
-        sidebarElement.classList.add('sidebar--active');
-      }
-    }, {
-      key: "openModal",
-      value: function openModal(modalElement) {
-        modalElement.classList.add('modal--active');
-      }
-    }, {
-      key: "closeModal",
-      value: function closeModal(modalElement) {
-        modalElement.classList.remove('modal--active');
-      }
-    }, {
-      key: "getCurrentTest",
-      value: function getCurrentTest() {
-        var activeTest = this.appElement.querySelector('.sidebar__link--active');
-        return DATA_TESTS[activeTest.dataset.test];
-      }
-    }, {
-      key: "resetAnswers",
-      value: function resetAnswers() {
-        var checkedInputs = this.appElement.querySelectorAll('.question__answer-input');
-        for (var i = 0; i < checkedInputs.length; i++) {
-          checkedInputs[i].checked = false;
-        }
-        userResponses.resetResponce();
-      }
-    }, {
+    _createClass(Timer, [{
       key: "startTimer",
       value: function startTimer(duration, displayElem) {
-        var timer = duration;
-        var currTest = this.getCurrentTest();
-        var timerInterval = setInterval(function () {
-          var hours = Math.floor(timer / 3600);
-          var minutes = Math.floor(timer % 3600 / 60);
-          var seconds = timer % 60;
+        var _this = this;
+        this.timer = duration;
+        var currTest = utilityInstance.getCurrentTest();
+        this.timerInterval = setInterval(function () {
+          var hours = Math.floor(_this.timer / 3600);
+          var minutes = Math.floor(_this.timer % 3600 / 60);
+          var seconds = _this.timer % 60;
           displayElem.textContent = "".concat(hours < 10 ? '0' : '').concat(hours, ":").concat(minutes < 10 ? '0' : '').concat(minutes, ":").concat(seconds < 10 ? '0' : '').concat(seconds);
-          timer--;
-          if (timer < 0) {
-            clearInterval(timerInterval);
+          _this.timer--;
+          if (_this.timer < 0) {
+            clearInterval(_this.timerInterval);
             renderInstance.renderResults(currTest, userResponses.localResults);
           }
         }, 1000);
       }
+    }, {
+      key: "resetTimer",
+      value: function resetTimer() {
+        this.timer = 0;
+        clearInterval(this.timerInterval);
+      }
     }]);
-    return Utility;
-  }(DOMHelper);
-  var utilityInstance = new Utility();
+    return Timer;
+  }();
+  var timerInstance = new Timer();
 
   var Handlers = /*#__PURE__*/function (_DOMHelper) {
     _inherits(Handlers, _DOMHelper);
@@ -781,11 +799,12 @@
         if (target.classList.contains('btn-start') || target.classList.contains('btn-restart')) {
           event.preventDefault();
           userResponses.resetResponce();
+          timerInstance.resetTimer();
           var _currTest = utilityInstance.getCurrentTest();
           renderInstance.renderTest(_currTest);
           renderInstance.renderQuestions(_currTest);
           var timerElem = document.querySelector('.top-panel__timer');
-          utilityInstance.startTimer(_currTest.time, timerElem);
+          timerInstance.startTimer(_currTest.time, timerElem);
         }
 
         // Reset Answers

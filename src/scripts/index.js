@@ -5,7 +5,7 @@ import handlersInstance from './eventHandlers'
 
 appInstance.init()
 
-// Utility Function
+// Sidebar localStorage state
 
 if (window.innerWidth > 768) {
 	try {

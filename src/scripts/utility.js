@@ -28,9 +28,9 @@ class Utility extends DOMHelper {
 
 	resetAnswers() {
 		const checkedInputs = this.appElement.querySelectorAll('.question__answer-input')
-		checkedInputs.forEach((input) => {
-			input.checked = false
-		})
+		for (let i = 0; i < checkedInputs.length; i++) {
+			checkedInputs[i].checked = false
+		}
 		userResponses.resetResponce()
 	}
 

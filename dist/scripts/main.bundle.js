@@ -1,1 +1,851 @@
-!function(){"use strict";function s(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function r(t,e){for(var n=0;n<e.length;n++){var s=e[n];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(t,l(s.key),s)}}function t(t,e,n){return e&&r(t.prototype,e),n&&r(t,n),Object.defineProperty(t,"prototype",{writable:!1}),t}function a(t,e,n){(e=l(e))in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n}function e(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),Object.defineProperty(t,"prototype",{writable:!1}),e&&n(t,e)}function i(t){return(i=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}function n(t,e){return(n=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(t,e){return t.__proto__=e,t})(t,e)}function c(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function o(n){var s=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],function(){})),!0}catch(t){return!1}}();return function(){var t,e=i(n),e=(t=s?(t=i(this).constructor,Reflect.construct(e,arguments,t)):e.apply(this,arguments),this);if(t&&("object"==typeof t||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return c(e)}}function l(t){t=function(t,e){if("object"!=typeof t||null===t)return t;var n=t[Symbol.toPrimitive];if(void 0===n)return String(t);n=n.call(t,e);if("object"!=typeof n)return n;throw new TypeError("@@toPrimitive must return a primitive value.")}(t,"string");return"symbol"==typeof t?t:String(t)}var u,d,p,v,m=t(function t(){s(this,t),this.appElement=document.querySelector(".app"),this.appInnerElement=this.appElement.querySelector(".app__inner"),this.sidebarElement=this.appElement.querySelector(".sidebar"),this.sidebarLinksElement=this.sidebarElement.querySelector(".sidebar__links")}),f=new m,_=[{id:0,name:"Путешествия",time:10,descr:"Добро пожаловать в квиз о путешествиях! \n\t\tЭтот захватывающий квиз предлагает вам увлекательное путешествие по различным странам и культурам. \n\t\tВам предстоит ответить на пять интересных вопросов, касающихся столиц, знаменитых памятников, \n\t\tкультурных особенностей и многого другого. \n\t\tПроверьте свои знания и обогатите свой опыт в путешествиях, \n\t\tв то время как наслаждаетесь этим захватывающим квизом о мире!",questions:[{question:"Какой город является столицей Франции?",type:"options",answers:[{id:0,value:"Лондон",correct:!1},{id:1,value:"Париж",correct:!0},{id:2,value:"Берлин",correct:!1},{id:3,value:"Мадрид",correct:!1},{id:4,value:"Рим",correct:!1},{id:5,value:"Амстердам",correct:!1}]},{question:"Какой памятник считается символом США и находится в Нью-Йорке?",type:"options",answers:[{id:0,value:"Статуя Единства",correct:!1},{id:1,value:"Тадж-Махал",correct:!1},{id:2,value:"Статуя Свободы",correct:!0},{id:3,value:"Биг Бен",correct:!1},{id:4,value:"Эйфелева башня",correct:!1},{id:5,value:"Мост Золотые ворота",correct:!1}]},{question:"Какая страна известна своими пирамидами и сфинксом?",type:"options",answers:[{id:0,value:"Греция",correct:!1},{id:1,value:"Египет",correct:!0},{id:2,value:"Италия",correct:!1},{id:3,value:"Турция",correct:!1},{id:4,value:"Япония",correct:!1},{id:5,value:"Индия",correct:!1}]},{question:"Какой канал является одним из наиболее известных инженерных \n\t\t\t\tчудес мира и соединяет Атлантический и Тихий океаны?",type:"options",answers:[{id:0,value:"Канал Манчеты",correct:!1},{id:1,value:"Канал Панама",correct:!0},{id:2,value:"Канал Суэц",correct:!1},{id:3,value:"Канал Север-Юг",correct:!1},{id:4,value:"Канал Манчестер",correct:!1},{id:5,value:"Канал Норфолк",correct:!1}]},{question:'Какой из следующих городов считается "Венецией Севера" благодаря своим каналам и мостам, \n\t\t\t\tрасположенным над Штокгольмским архипелагом?',type:"text",answers:[{id:0,value:"Амстердам — культурная столица Нидерландов, известная своими уникальными \n\t\t\t\t\t\tканалами и великолепной архитектурой.",correct:!1},{id:1,value:"Венеция — итальянский город, лежащий на 118 островах, известный своими каналами, \n\t\t\t\t\t\tгондолами и величественной базиликой Святого Марка.",correct:!1},{id:2,value:"Стокгольм — столица Швеции, возвышающаяся над Балтийским морем, которая славится своими красивыми \n\t\t\t\t\t\tфьордами, историческими замками и многочисленными музеями.",correct:!0}]}]},{id:1,name:"Программирование",time:2e3,descr:"Добро пожаловать в квиз о программировании! \n\t\tВ этом увлекательном квизе вы сможете проверить свои знания в области программирования. \n\t\tВам предстоит ответить на три интересных вопроса, которые затронут различные аспекты программирования, \n\t\tвключая языки программирования, алгоритмы и логику программирования. \n\t\tПодтяните свои знания, проверьте себя и наслаждайтесь этим захватывающим квизом о мире программирования!",questions:[{question:'Что такое "замыкание" (closure) в JavaScript?',type:"text",answers:[{id:0,value:"Это процесс, при котором JavaScript автоматически преобразует \n\t\t\t\t\t\tтипы данных для удобства программиста.",correct:!1},{id:1,value:'Это способ объявления переменных без использования ключевого слова "var".',correct:!1},{id:2,value:"Это функция, которая не имеет доступа к внешним переменным своего контекста.",correct:!1},{id:3,value:"Это функция, которая имеет доступ к переменным из своего лексического окружения, \n\t\t\t\t\t\tдаже после завершения выполнения.",correct:!0}]},{question:"Какой из приведенных ниже паттернов JavaScript используется для обработки асинхронных операций?",type:"options",answers:[{id:0,value:"Singleton",correct:!1},{id:1,value:"Observer",correct:!1},{id:2,value:"Factory",correct:!1},{id:3,value:"Promise",correct:!0}]},{question:"Что такое RESTful API?",type:"text",answers:[{id:0,value:"Это способ организации данных в реляционных базах данных.",correct:!1},{id:1,value:"Это стандартный способ оформления HTML-кода на веб-страницах.",correct:!1},{id:2,value:"Это архитектурный стиль, который определяет правила для создания веб-сервисов.",correct:!0},{id:3,value:"Это язык программирования для создания интерактивных элементов на веб-страницах.",correct:!1}]},{question:"Что такое принцип SOLID в объектно-ориентированном программировании?",type:"text",answers:[{id:0,value:"Это набор базовых правил для написания стилей CSS.",correct:!1},{id:1,value:" Это принцип проектирования баз данных для обеспечения их эффективности и целостности.",correct:!1},{id:2,value:"Это набор принципов, которые помогают написать чистый и поддерживаемый код.",correct:!0},{id:3,value:"Это способ объединения нескольких файлов JavaScript в один для уменьшения загрузки страницы.",correct:!1}]}]},{id:2,name:"Экономика",time:600,descr:"Добро пожаловать в квиз по экономике! \n\t\tВ этом увлекательном квизе вы сможете проверить свои знания в области экономики. \n\t\tВам предстоит ответить на три интересных вопроса, которые охватывают различные аспекты экономической теории, \n\t\tмировую финансовую систему и ключевые экономические показатели. \n\t\tПроверьте свои знания, расширьте свои познания в экономике и наслаждайтесь этим захватывающим квизом!",questions:[{question:"Что такое инфляция?",type:"text",answers:[{id:0,value:"Это процесс уменьшения общего уровня цен на товары и услуги в экономике.",correct:!1},{id:1,value:"Это увеличение производственной мощности предприятий и уровня технологий.",correct:!1},{id:2,value:"Это снижение уровня безработицы в стране.",correct:!1},{id:3,value:"Это увеличение общего уровня цен на товары и услуги в экономике со временем.",correct:!0}]},{question:"Что такое диверсификация?",type:"options",answers:[{id:0,value:"Увеличение налогов",correct:!1},{id:1,value:"Расширение производства",correct:!1},{id:2,value:"Разнообразие инвестиций",correct:!0}]},{question:"Что такое спрос и предложение на рынке?",type:"text",answers:[{id:0,value:"Спрос - это количество товаров и услуг, которые производители готовы предоставить, \n\t\t\t\t\t\tа предложение - это количество товаров и услуг, которое потребители хотят приобрести.",correct:!1},{id:1,value:"Спрос - это количество товаров и услуг, которое потребители хотят приобрести, а предложение \n\t\t\t\t\t\t- это количество товаров и услуг, которые производители готовы предоставить.",correct:!0},{id:2,value:"Спрос - это количество товаров и услуг, которое производители хотят продать, а предложение - \n\t\t\t\t\t\tэто количество товаров и услуг, которые потребители готовы купить.",correct:!1},{id:3,value:"Спрос - это количество товаров и услуг, которое производители готовы произвести, а предложение - \n\t\t\t\t\t\tэто количество товаров и услуг, которые потребители хотят приобрести.",correct:!1}]},{question:"Что такое инвестиции в экономике?",type:"text",answers:[{id:0,value:"Это расходы государства на социальные программы и образование.",correct:!1},{id:1,value:"Это деньги, вложенные в различные финансовые инструменты для получения прибыли.",correct:!1},{id:2,value:"Это денежные средства, которые люди хранят в банках.",correct:!1},{id:3,value:"Это капитал, вложенный в предприятия, оборудование \n\t\t\t\t\t\tи другие активы с целью увеличения производства и прибыли.",correct:!0}]}]},{id:3,name:"Менеджмент",time:7200,descr:"Добро пожаловать в квиз по менеджменту! \n\t\tВ этом увлекательном квизе вы сможете проверить свои знания в области менеджмента и лидерства. \n\t\tВам предстоит ответить на три интересных вопроса, которые касаются различных аспектов управления бизнесом, \n\t\tэффективного лидерства, коммуникации и мотивации сотрудников. \n\t\tПроверьте свои знания в области менеджмента, расширьте свои навыки управления и\n\t\tнаслаждайтесь этим захватывающим квизом!",questions:[{question:"Что такое SWOT-анализ?",type:"text",answers:[{id:0,value:"Инструмент управления проектами",correct:!1},{id:1,value:"Метод повышения мотивации сотрудников",correct:!1},{id:2,value:"Методика принятия оперативных решений",correct:!1},{id:3,value:"Инструмент стратегического анализа",correct:!0}]},{question:'Что означает термин "делегирование"?',type:"text",answers:[{id:0,value:"Отказ от ответственности",correct:!1},{id:1,value:"Подмена исполнителей",correct:!1},{id:2,value:"Передача полномочий и ответственности сотрудникам",correct:!0},{id:3,value:"Зависимость от внешних ресурсов",correct:!1},{id:4,value:"Перенос сроков выполнения задачи",correct:!0}]},{question:'Что представляет собой "тимбилдинг"?',type:"options",answers:[{id:0,value:"Доверие и сотрудничество",correct:!1},{id:1,value:"Повышение зарплаты",correct:!1},{id:2,value:"Конфликтное разрешение",correct:!1},{id:3,value:"Мероприятия для команды",correct:!0}]},{question:'Что означает термин "эмповермент" (empowerment) в управлении командой?',type:"text",answers:[{id:0,value:"Методика развития конфликтного поведения",correct:!1},{id:1,value:"Передача полномочий и ответственности сотрудникам для принятия решений",correct:!0},{id:2,value:"Метод управления конкурентоспособностью команды",correct:!1},{id:3,value:"Применение инновационных стратегий для повышения производительности",correct:!1}]}]}],y=(e(k,m),v=o(k),t(k,[{key:"init",value:function(){this.renderStartPage(),this.renderTestsList()}},{key:"renderStartPage",value:function(){this.appInnerElement.innerHTML='\n          <div class="test-start">\n            <span>Выберите тест из списка</span>\n          </div>\n        '}},{key:"renderTestsList",value:function(){var e=this;try{_.forEach(function(t){e.sidebarLinksElement.insertAdjacentHTML("beforeend",'\n              <li class="sidebar__link" data-test="'.concat(t.id,'"><span></span><a href="#">').concat(t.name,"</a></li>\n            "))})}catch(e){console.error("Ошибка при редеринге списка тестов: ",e)}}}]),new k),b=(t(E,[{key:"setResponce",value:function(t,e){this.localResults[t]=e}},{key:"getResponce",value:function(t){return this.localResults[t]}},{key:"resetResponce",value:function(){this.localResults={}}}]),new E),h=(e(g,m),p=o(g),t(g,[{key:"renderDescription",value:function(t){this.appInnerElement.innerHTML='\n        <div class="top-panel">\n            <div class="top-panel__inner">\n            <div class="top-panel__left">\n                <span class="top-panel__descr">Описание</span>\n            </div>\n            </div>\n        </div>\n        <div class="test-mobile-content">\n            <div class="test-mobile-content__mobile-info">\n            <h2>'.concat(t.name,'</h2>\n            </div>\n        </div>\n        <div class="test-descr">\n            <p>').concat(t.descr,'</p>\n            <div class="test-descr-buttons">\n            <a class="btn-primary btn-start" data-test="').concat(t.id,'" href="#">Начать</a>\n            <a class="btn-secondary btn-cancel" href="#">Отмена</a>\n            </div>\n        </div>')}},{key:"renderTest",value:function(t){this.appInnerElement.innerHTML='\n\t\t<div class="top-panel">\n\t\t\t<div class="top-panel__inner">\n\t\t\t\t<div class="top-panel__left">\n\t\t\t\t\t<a class="top-panel__exit js-modal-open" data-modal="modal-exit">Выход</a>\n\t\t\t\t</div>\n\t\t\t\t<div class="top-panel__center">\n\t\t\t\t\t<span class="top-panel__test-name">'.concat(t.name,'</span>\n\t\t\t\t</div>\n\t\t\t\t<div class="top-panel__right">\n\t\t\t\t\t<div class="top-panel__reset">\n\t\t\t\t\t\t<span class="top-panel__reset-btn">Сбросить все ответы</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="top-panel__mobile-column">\n\t\t\t\t\t\t<div class="top-panel__progress">\n\t\t\t\t\t\t\t<span>0/').concat(t.questions.length,'</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="top-panel__timer">\n\t\t\t\t\t\t\t<span>00:00:00</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="test-mobile-content">\n\t\t\t<div class="test-mobile-content__mobile-info">\n\t\t\t\t<h2>').concat(t.name,'</h2>\n\t\t\t\t<a class="js-modal-open" data-modal="modal-exit">Выход</a>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class="test">\n\t\t\t\n\t\t</div>\n\t\t<div class="bottom-panel">\n\t\t\t<a class="btn-primary btn-primary-outline btn-get-results" href="#">Завершить</a>\n\t\t</div>')}},{key:"renderQuestions",value:function(t){this.appElement.querySelector(".test").innerHTML=t.questions.map(function(t,e){var n=t.answers.map(function(t){return'\n                  <label class="question__answer">\n                    <input class="question__answer-input" type="radio" name="'.concat(e,'" value="').concat(t.id,'">\n                    <span class="radio-custom"></span>\n                    ').concat(t.value,"\n                  </label>\n                ")}).join("");return'\n              <div class="question question--'.concat(t.type,'">\n                <div class="question__content">\n                  <span class="question__number">').concat(e+1,'. </span>\n                  <span class="question__text">').concat(t.question,'</span>\n                </div>\n                <div class="question__answers">\n                  <form class="question__answers-list">').concat(n,"</form>\n                </div>\n              </div>\n            ")}).join("")}},{key:"renderResults",value:function(t,a){var e=Object.keys(a),i=(this.appInnerElement.innerHTML='\n          <div class="top-panel">\n          <div class="top-panel__inner">\n          <div class="top-panel__left">\n              <a class="top-panel__exit js-modal-open" data-modal="modal-exit">Выход</a>\n          </div>\n          <div class="top-panel__center">\n              <span class="top-panel__test-name">'.concat(t.name,'</span>\n          </div>\n              </div>\n          </div>\n          <div class="test-mobile-content">\n          <div class="test-mobile-content__mobile-info">\n              <h2>').concat(t.name,'</h2>\n              <a class="js-modal-open" data-modal="modal-exit">Выход</a>\n          </div>\n            </div>\n          <div class="test-results">\n            <div class="test-results__info">\n              <h2>Тест завершён</h2>\n              <p>Вы ответили на <span class="test-results__answered">').concat(e.length,'</span> из\n                <span class="test-results__total">').concat(t.questions.length,'</span> вопросов.</p>\n            </div>\n            <div class="test-results__list">\n              <p class="test-results__heading">Ваши ответы</p>\n            </div>\n          </div>\n          <div class="bottom-panel">\n            <a class="btn-primary btn-primary-outline btn-restart" href="#">Пройти еще раз</a>\n          </div>'),this.appElement.querySelector(".test-results__list"));t.questions.forEach(function(t,e){var n="",s=(t.answers.forEach(function(t){!0===t.correct&&(n=t.value)}),a[e]),r="";r=void 0!==s&&(s=t.answers[s])?s.value:"Не ответили",i.insertAdjacentHTML("beforeend",'\n            <div class="test-results__item">\n              <p class="test-results__question">\n                <span class="test-results__question-number">'.concat(e+1,'.</span>\n                <span class="test-results__question-text">').concat(t.question,'</span>\n              </p>\n              <p class="test-results__correct-answer">Правильный ответ:\n                <span class="test-results__correct-answer-text">').concat(n,'</span>\n              </p>\n              <p class="test-results__your-answer">Вы ответили:\n                <span class="test-results__your-answer-text">').concat(r,"</span>\n              </p>\n            </div>\n            "))})}},{key:"renderIndicator",value:function(t,e){this.appElement.querySelector(".top-panel__progress span").textContent="".concat(t,"/").concat(e.questions.length)}}]),new g),w=(e(S,m),d=o(S),t(S,[{key:"hideSidebar",value:function(t){t.classList.remove("sidebar--active")}},{key:"showSidebar",value:function(t){t.classList.add("sidebar--active")}},{key:"openModal",value:function(t){t.classList.add("modal--active")}},{key:"closeModal",value:function(t){t.classList.remove("modal--active")}},{key:"getCurrentTest",value:function(){var t=this.appElement.querySelector(".sidebar__link--active");return _[t.dataset.test]}},{key:"resetAnswers",value:function(){this.appElement.querySelectorAll(".question__answer-input").forEach(function(t){t.checked=!1}),b.resetResponce()}},{key:"startTimer",value:function(t,s){var r=t,a=this.getCurrentTest(),i=setInterval(function(){var t=Math.floor(r/3600),e=Math.floor(r%3600/60),n=r%60;s.textContent="".concat(t<10?"0":"").concat(t,":").concat(e<10?"0":"").concat(e,":").concat(n<10?"0":"").concat(n),--r<0&&(clearInterval(i),h.renderResults(a,b.localResults))},1e3)}}]),new S),m=(e(q,m),u=o(q),new(t(q)));function q(){var r;s(this,q);for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];return a(c(r=u.call.apply(u,[this].concat(e))),"changeAnswer",function(t){var e;t.target.classList.contains("question__answer-input")&&(b.setResponce(t.target.name,t.target.value),t=Object.keys(b.localResults).length,e=w.getCurrentTest(),h.renderIndicator(t,e))}),a(c(r),"documentClick",function(t){var e=t.target;if(e.classList.contains("hamburger")&&(r.sidebarElement.classList.contains("sidebar--active")?(w.hideSidebar(r.sidebarElement),localStorage.setItem("sidebarState",JSON.stringify({isOpen:!1}))):(w.showSidebar(r.sidebarElement),localStorage.setItem("sidebarState",JSON.stringify({isOpen:!0})))),e.classList.contains("sidebar__link")&&window.innerWidth<769&&w.hideSidebar(r.sidebarElement),e.classList.contains("sidebar__link")){var n=r.appInnerElement.querySelector(".test"),s=r.appInnerElement.querySelector(".test-results");if(n||s)return n=document.getElementById("modal-exit"),void w.openModal(n);var s=r.appElement.querySelector(".sidebar__link--active"),n=(s&&s.classList.remove("sidebar__link--active"),e.classList.add("sidebar__link--active"),_[e.dataset.test]);h.renderDescription(n)}e.classList.contains("btn-cancel")&&(t.preventDefault(),r.appElement.querySelector(".sidebar__link--active").classList.remove("sidebar__link--active"),y.renderStartPage()),(e.classList.contains("btn-start")||e.classList.contains("btn-restart"))&&(t.preventDefault(),b.resetResponce(),s=w.getCurrentTest(),h.renderTest(s),h.renderQuestions(s),n=document.querySelector(".top-panel__timer"),w.startTimer(s.time,n)),e.classList.contains("top-panel__reset-btn")&&(s=w.getCurrentTest(),w.resetAnswers(),h.renderIndicator(0,s)),e.classList.contains("btn-get-results")&&(t.preventDefault(),n=w.getCurrentTest(),h.renderResults(n,b.localResults)),e.classList.contains("js-modal-open")&&(s=e.dataset.modal,t=document.getElementById(s),w.openModal(t)),(e.classList.contains("js-modal-close")||e.classList.contains("modal--active"))&&(n=document.querySelector(".modal--active"),w.closeModal(n))}),r}function S(){return s(this,S),d.apply(this,arguments)}function g(){return s(this,g),p.apply(this,arguments)}function E(){s(this,E),this.localResults={}}function k(){return s(this,k),v.apply(this,arguments)}if(y.init(),768<window.innerWidth)try{var L=localStorage.getItem("sidebarState");JSON.parse(L).isOpen?w.showSidebar(f.sidebarElement):w.hideSidebar(f.sidebarElement)}catch(s){localStorage.setItem("sidebarState",JSON.stringify({isOpen:!1}))}f.appElement.addEventListener("change",m.changeAnswer),document.addEventListener("click",m.documentClick)}();
+(function () {
+  'use strict';
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    Object.defineProperty(Constructor, "prototype", {
+      writable: false
+    });
+    return Constructor;
+  }
+  function _defineProperty(obj, key, value) {
+    key = _toPropertyKey(key);
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    Object.defineProperty(subClass, "prototype", {
+      writable: false
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+    return _setPrototypeOf(o, p);
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self;
+  }
+  function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    } else if (call !== void 0) {
+      throw new TypeError("Derived constructors may only return object or undefined");
+    }
+    return _assertThisInitialized(self);
+  }
+  function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf(Derived),
+        result;
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _toPrimitive(input, hint) {
+    if (typeof input !== "object" || input === null) return input;
+    var prim = input[Symbol.toPrimitive];
+    if (prim !== undefined) {
+      var res = prim.call(input, hint || "default");
+      if (typeof res !== "object") return res;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return (hint === "string" ? String : Number)(input);
+  }
+  function _toPropertyKey(arg) {
+    var key = _toPrimitive(arg, "string");
+    return typeof key === "symbol" ? key : String(key);
+  }
+
+  var DOMHelper = /*#__PURE__*/_createClass(function DOMHelper() {
+    _classCallCheck(this, DOMHelper);
+    this.appElement = document.querySelector('.app');
+    this.appInnerElement = this.appElement.querySelector('.app__inner');
+    this.sidebarElement = this.appElement.querySelector('.sidebar');
+    this.sidebarLinksElement = this.sidebarElement.querySelector('.sidebar__links');
+  });
+  var domInstance = new DOMHelper();
+
+  var DATA_TESTS = [{
+    id: 0,
+    name: 'Путешествия',
+    time: 10,
+    descr: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C \u0432 \u043A\u0432\u0438\u0437 \u043E \u043F\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044F\u0445! \n\t\t\u042D\u0442\u043E\u0442 \u0437\u0430\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0449\u0438\u0439 \u043A\u0432\u0438\u0437 \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u0435\u0442 \u0432\u0430\u043C \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0435 \u043F\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0435 \u043F\u043E \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u043C \u0441\u0442\u0440\u0430\u043D\u0430\u043C \u0438 \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u0430\u043C. \n\t\t\u0412\u0430\u043C \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442 \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u043F\u044F\u0442\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432, \u043A\u0430\u0441\u0430\u044E\u0449\u0438\u0445\u0441\u044F \u0441\u0442\u043E\u043B\u0438\u0446, \u0437\u043D\u0430\u043C\u0435\u043D\u0438\u0442\u044B\u0445 \u043F\u0430\u043C\u044F\u0442\u043D\u0438\u043A\u043E\u0432, \n\t\t\u043A\u0443\u043B\u044C\u0442\u0443\u0440\u043D\u044B\u0445 \u043E\u0441\u043E\u0431\u0435\u043D\u043D\u043E\u0441\u0442\u0435\u0439 \u0438 \u043C\u043D\u043E\u0433\u043E\u0433\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E. \n\t\t\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F \u0438 \u043E\u0431\u043E\u0433\u0430\u0442\u0438\u0442\u0435 \u0441\u0432\u043E\u0439 \u043E\u043F\u044B\u0442 \u0432 \u043F\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u044F\u0445, \n\t\t\u0432 \u0442\u043E \u0432\u0440\u0435\u043C\u044F \u043A\u0430\u043A \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u0435\u0442\u0435\u0441\u044C \u044D\u0442\u0438\u043C \u0437\u0430\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0449\u0438\u043C \u043A\u0432\u0438\u0437\u043E\u043C \u043E \u043C\u0438\u0440\u0435!",
+    questions: [{
+      question: "\u041A\u0430\u043A\u043E\u0439 \u0433\u043E\u0440\u043E\u0434 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441\u0442\u043E\u043B\u0438\u0446\u0435\u0439 \u0424\u0440\u0430\u043D\u0446\u0438\u0438?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u041B\u043E\u043D\u0434\u043E\u043D",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041F\u0430\u0440\u0438\u0436",
+        correct: true
+      }, {
+        id: 2,
+        value: "\u0411\u0435\u0440\u043B\u0438\u043D",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u041C\u0430\u0434\u0440\u0438\u0434",
+        correct: false
+      }, {
+        id: 4,
+        value: "\u0420\u0438\u043C",
+        correct: false
+      }, {
+        id: 5,
+        value: "\u0410\u043C\u0441\u0442\u0435\u0440\u0434\u0430\u043C",
+        correct: false
+      }]
+    }, {
+      question: "\u041A\u0430\u043A\u043E\u0439 \u043F\u0430\u043C\u044F\u0442\u043D\u0438\u043A \u0441\u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044F \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u043C \u0421\u0428\u0410 \u0438 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0432 \u041D\u044C\u044E-\u0419\u043E\u0440\u043A\u0435?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u0421\u0442\u0430\u0442\u0443\u044F \u0415\u0434\u0438\u043D\u0441\u0442\u0432\u0430",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u0422\u0430\u0434\u0436-\u041C\u0430\u0445\u0430\u043B",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u0421\u0442\u0430\u0442\u0443\u044F \u0421\u0432\u043E\u0431\u043E\u0434\u044B",
+        correct: true
+      }, {
+        id: 3,
+        value: "\u0411\u0438\u0433 \u0411\u0435\u043D",
+        correct: false
+      }, {
+        id: 4,
+        value: "\u042D\u0439\u0444\u0435\u043B\u0435\u0432\u0430 \u0431\u0430\u0448\u043D\u044F",
+        correct: false
+      }, {
+        id: 5,
+        value: "\u041C\u043E\u0441\u0442 \u0417\u043E\u043B\u043E\u0442\u044B\u0435 \u0432\u043E\u0440\u043E\u0442\u0430",
+        correct: false
+      }]
+    }, {
+      question: "\u041A\u0430\u043A\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0430 \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430 \u0441\u0432\u043E\u0438\u043C\u0438 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u0430\u043C\u0438 \u0438 \u0441\u0444\u0438\u043D\u043A\u0441\u043E\u043C?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u0413\u0440\u0435\u0446\u0438\u044F",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u0415\u0433\u0438\u043F\u0435\u0442",
+        correct: true
+      }, {
+        id: 2,
+        value: "\u0418\u0442\u0430\u043B\u0438\u044F",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u0422\u0443\u0440\u0446\u0438\u044F",
+        correct: false
+      }, {
+        id: 4,
+        value: "\u042F\u043F\u043E\u043D\u0438\u044F",
+        correct: false
+      }, {
+        id: 5,
+        value: "\u0418\u043D\u0434\u0438\u044F",
+        correct: false
+      }]
+    }, {
+      question: "\u041A\u0430\u043A\u043E\u0439 \u043A\u0430\u043D\u0430\u043B \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043E\u0434\u043D\u0438\u043C \u0438\u0437 \u043D\u0430\u0438\u0431\u043E\u043B\u0435\u0435 \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0445 \u0438\u043D\u0436\u0435\u043D\u0435\u0440\u043D\u044B\u0445 \n\t\t\t\t\u0447\u0443\u0434\u0435\u0441 \u043C\u0438\u0440\u0430 \u0438 \u0441\u043E\u0435\u0434\u0438\u043D\u044F\u0435\u0442 \u0410\u0442\u043B\u0430\u043D\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0438 \u0422\u0438\u0445\u0438\u0439 \u043E\u043A\u0435\u0430\u043D\u044B?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u041A\u0430\u043D\u0430\u043B \u041C\u0430\u043D\u0447\u0435\u0442\u044B",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041A\u0430\u043D\u0430\u043B \u041F\u0430\u043D\u0430\u043C\u0430",
+        correct: true
+      }, {
+        id: 2,
+        value: "\u041A\u0430\u043D\u0430\u043B \u0421\u0443\u044D\u0446",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u041A\u0430\u043D\u0430\u043B \u0421\u0435\u0432\u0435\u0440-\u042E\u0433",
+        correct: false
+      }, {
+        id: 4,
+        value: "\u041A\u0430\u043D\u0430\u043B \u041C\u0430\u043D\u0447\u0435\u0441\u0442\u0435\u0440",
+        correct: false
+      }, {
+        id: 5,
+        value: "\u041A\u0430\u043D\u0430\u043B \u041D\u043E\u0440\u0444\u043E\u043B\u043A",
+        correct: false
+      }]
+    }, {
+      question: "\u041A\u0430\u043A\u043E\u0439 \u0438\u0437 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0445 \u0433\u043E\u0440\u043E\u0434\u043E\u0432 \u0441\u0447\u0438\u0442\u0430\u0435\u0442\u0441\u044F \"\u0412\u0435\u043D\u0435\u0446\u0438\u0435\u0439 \u0421\u0435\u0432\u0435\u0440\u0430\" \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F \u0441\u0432\u043E\u0438\u043C \u043A\u0430\u043D\u0430\u043B\u0430\u043C \u0438 \u043C\u043E\u0441\u0442\u0430\u043C, \n\t\t\t\t\u0440\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u043D\u044B\u043C \u043D\u0430\u0434 \u0428\u0442\u043E\u043A\u0433\u043E\u043B\u044C\u043C\u0441\u043A\u0438\u043C \u0430\u0440\u0445\u0438\u043F\u0435\u043B\u0430\u0433\u043E\u043C?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u0410\u043C\u0441\u0442\u0435\u0440\u0434\u0430\u043C \u2014 \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u043D\u0430\u044F \u0441\u0442\u043E\u043B\u0438\u0446\u0430 \u041D\u0438\u0434\u0435\u0440\u043B\u0430\u043D\u0434\u043E\u0432, \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u0441\u0432\u043E\u0438\u043C\u0438 \u0443\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u044B\u043C\u0438 \n\t\t\t\t\t\t\u043A\u0430\u043D\u0430\u043B\u0430\u043C\u0438 \u0438 \u0432\u0435\u043B\u0438\u043A\u043E\u043B\u0435\u043F\u043D\u043E\u0439 \u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u043E\u0439.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u0412\u0435\u043D\u0435\u0446\u0438\u044F \u2014 \u0438\u0442\u0430\u043B\u044C\u044F\u043D\u0441\u043A\u0438\u0439 \u0433\u043E\u0440\u043E\u0434, \u043B\u0435\u0436\u0430\u0449\u0438\u0439 \u043D\u0430 118 \u043E\u0441\u0442\u0440\u043E\u0432\u0430\u0445, \u0438\u0437\u0432\u0435\u0441\u0442\u043D\u044B\u0439 \u0441\u0432\u043E\u0438\u043C\u0438 \u043A\u0430\u043D\u0430\u043B\u0430\u043C\u0438, \n\t\t\t\t\t\t\u0433\u043E\u043D\u0434\u043E\u043B\u0430\u043C\u0438 \u0438 \u0432\u0435\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439 \u0431\u0430\u0437\u0438\u043B\u0438\u043A\u043E\u0439 \u0421\u0432\u044F\u0442\u043E\u0433\u043E \u041C\u0430\u0440\u043A\u0430.",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u0421\u0442\u043E\u043A\u0433\u043E\u043B\u044C\u043C \u2014 \u0441\u0442\u043E\u043B\u0438\u0446\u0430 \u0428\u0432\u0435\u0446\u0438\u0438, \u0432\u043E\u0437\u0432\u044B\u0448\u0430\u044E\u0449\u0430\u044F\u0441\u044F \u043D\u0430\u0434 \u0411\u0430\u043B\u0442\u0438\u0439\u0441\u043A\u0438\u043C \u043C\u043E\u0440\u0435\u043C, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0441\u043B\u0430\u0432\u0438\u0442\u0441\u044F \u0441\u0432\u043E\u0438\u043C\u0438 \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u043C\u0438 \n\t\t\t\t\t\t\u0444\u044C\u043E\u0440\u0434\u0430\u043C\u0438, \u0438\u0441\u0442\u043E\u0440\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0438 \u0437\u0430\u043C\u043A\u0430\u043C\u0438 \u0438 \u043C\u043D\u043E\u0433\u043E\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u043C\u0438 \u043C\u0443\u0437\u0435\u044F\u043C\u0438.",
+        correct: true
+      }]
+    }]
+  }, {
+    id: 1,
+    name: 'Программирование',
+    time: 2000,
+    descr: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C \u0432 \u043A\u0432\u0438\u0437 \u043E \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438! \n\t\t\u0412 \u044D\u0442\u043E\u043C \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u043C \u043A\u0432\u0438\u0437\u0435 \u0432\u044B \u0441\u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F. \n\t\t\u0412\u0430\u043C \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442 \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u0442\u0440\u0438 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0437\u0430\u0442\u0440\u043E\u043D\u0443\u0442 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435 \u0430\u0441\u043F\u0435\u043A\u0442\u044B \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F, \n\t\t\u0432\u043A\u043B\u044E\u0447\u0430\u044F \u044F\u0437\u044B\u043A\u0438 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F, \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B \u0438 \u043B\u043E\u0433\u0438\u043A\u0443 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F. \n\t\t\u041F\u043E\u0434\u0442\u044F\u043D\u0438\u0442\u0435 \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u043F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0441\u0435\u0431\u044F \u0438 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u0439\u0442\u0435\u0441\u044C \u044D\u0442\u0438\u043C \u0437\u0430\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0449\u0438\u043C \u043A\u0432\u0438\u0437\u043E\u043C \u043E \u043C\u0438\u0440\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F!",
+    questions: [{
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \"\u0437\u0430\u043C\u044B\u043A\u0430\u043D\u0438\u0435\" (closure) \u0432 JavaScript?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u042D\u0442\u043E \u043F\u0440\u043E\u0446\u0435\u0441\u0441, \u043F\u0440\u0438 \u043A\u043E\u0442\u043E\u0440\u043E\u043C JavaScript \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u0443\u0435\u0442 \n\t\t\t\t\t\t\u0442\u0438\u043F\u044B \u0434\u0430\u043D\u043D\u044B\u0445 \u0434\u043B\u044F \u0443\u0434\u043E\u0431\u0441\u0442\u0432\u0430 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442\u0430.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u042D\u0442\u043E \u0441\u043F\u043E\u0441\u043E\u0431 \u043E\u0431\u044A\u044F\u0432\u043B\u0435\u043D\u0438\u044F \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0431\u0435\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F \u043A\u043B\u044E\u0447\u0435\u0432\u043E\u0433\u043E \u0441\u043B\u043E\u0432\u0430 \"var\".",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u042D\u0442\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u044F, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043D\u0435 \u0438\u043C\u0435\u0435\u0442 \u0434\u043E\u0441\u0442\u0443\u043F\u0430 \u043A \u0432\u043D\u0435\u0448\u043D\u0438\u043C \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u043C \u0441\u0432\u043E\u0435\u0433\u043E \u043A\u043E\u043D\u0442\u0435\u043A\u0441\u0442\u0430.",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u042D\u0442\u043E \u0444\u0443\u043D\u043A\u0446\u0438\u044F, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0438\u043C\u0435\u0435\u0442 \u0434\u043E\u0441\u0442\u0443\u043F \u043A \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u043C \u0438\u0437 \u0441\u0432\u043E\u0435\u0433\u043E \u043B\u0435\u043A\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u043A\u0440\u0443\u0436\u0435\u043D\u0438\u044F, \n\t\t\t\t\t\t\u0434\u0430\u0436\u0435 \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F.",
+        correct: true
+      }]
+    }, {
+      question: "\u041A\u0430\u043A\u043E\u0439 \u0438\u0437 \u043F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044B\u0445 \u043D\u0438\u0436\u0435 \u043F\u0430\u0442\u0442\u0435\u0440\u043D\u043E\u0432 JavaScript \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u0434\u043B\u044F \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u0430\u0441\u0438\u043D\u0445\u0440\u043E\u043D\u043D\u044B\u0445 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0439?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "Singleton",
+        correct: false
+      }, {
+        id: 1,
+        value: "Observer",
+        correct: false
+      }, {
+        id: 2,
+        value: "Factory",
+        correct: false
+      }, {
+        id: 3,
+        value: "Promise",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 RESTful API?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u042D\u0442\u043E \u0441\u043F\u043E\u0441\u043E\u0431 \u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u0438 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0440\u0435\u043B\u044F\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0431\u0430\u0437\u0430\u0445 \u0434\u0430\u043D\u043D\u044B\u0445.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u042D\u0442\u043E \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0439 \u0441\u043F\u043E\u0441\u043E\u0431 \u043E\u0444\u043E\u0440\u043C\u043B\u0435\u043D\u0438\u044F HTML-\u043A\u043E\u0434\u0430 \u043D\u0430 \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445.",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u042D\u0442\u043E \u0430\u0440\u0445\u0438\u0442\u0435\u043A\u0442\u0443\u0440\u043D\u044B\u0439 \u0441\u0442\u0438\u043B\u044C, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u0435\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u0430 \u0434\u043B\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432.",
+        correct: true
+      }, {
+        id: 3,
+        value: "\u042D\u0442\u043E \u044F\u0437\u044B\u043A \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u0434\u043B\u044F \u0441\u043E\u0437\u0434\u0430\u043D\u0438\u044F \u0438\u043D\u0442\u0435\u0440\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 \u043D\u0430 \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430\u0445.",
+        correct: false
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u043F\u0440\u0438\u043D\u0446\u0438\u043F SOLID \u0432 \u043E\u0431\u044A\u0435\u043A\u0442\u043D\u043E-\u043E\u0440\u0438\u0435\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u043C \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u042D\u0442\u043E \u043D\u0430\u0431\u043E\u0440 \u0431\u0430\u0437\u043E\u0432\u044B\u0445 \u043F\u0440\u0430\u0432\u0438\u043B \u0434\u043B\u044F \u043D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u044F \u0441\u0442\u0438\u043B\u0435\u0439 CSS.",
+        correct: false
+      }, {
+        id: 1,
+        value: " \u042D\u0442\u043E \u043F\u0440\u0438\u043D\u0446\u0438\u043F \u043F\u0440\u043E\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u0431\u0430\u0437 \u0434\u0430\u043D\u043D\u044B\u0445 \u0434\u043B\u044F \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0435\u043D\u0438\u044F \u0438\u0445 \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438 \u0438 \u0446\u0435\u043B\u043E\u0441\u0442\u043D\u043E\u0441\u0442\u0438.",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u042D\u0442\u043E \u043D\u0430\u0431\u043E\u0440 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u043E\u0432, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u043E\u043C\u043E\u0433\u0430\u044E\u0442 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0447\u0438\u0441\u0442\u044B\u0439 \u0438 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u043C\u044B\u0439 \u043A\u043E\u0434.",
+        correct: true
+      }, {
+        id: 3,
+        value: "\u042D\u0442\u043E \u0441\u043F\u043E\u0441\u043E\u0431 \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u0438\u0445 \u0444\u0430\u0439\u043B\u043E\u0432 JavaScript \u0432 \u043E\u0434\u0438\u043D \u0434\u043B\u044F \u0443\u043C\u0435\u043D\u044C\u0448\u0435\u043D\u0438\u044F \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u044B.",
+        correct: false
+      }]
+    }]
+  }, {
+    id: 2,
+    name: 'Экономика',
+    time: 600,
+    descr: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C \u0432 \u043A\u0432\u0438\u0437 \u043F\u043E \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0435! \n\t\t\u0412 \u044D\u0442\u043E\u043C \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u043C \u043A\u0432\u0438\u0437\u0435 \u0432\u044B \u0441\u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0438. \n\t\t\u0412\u0430\u043C \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442 \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u0442\u0440\u0438 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043E\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0442 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435 \u0430\u0441\u043F\u0435\u043A\u0442\u044B \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u0442\u0435\u043E\u0440\u0438\u0438, \n\t\t\u043C\u0438\u0440\u043E\u0432\u0443\u044E \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u0443\u044E \u0441\u0438\u0441\u0442\u0435\u043C\u0443 \u0438 \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u0435 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u0438. \n\t\t\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F, \u0440\u0430\u0441\u0448\u0438\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0438 \u043F\u043E\u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0435 \u0438 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u0439\u0442\u0435\u0441\u044C \u044D\u0442\u0438\u043C \u0437\u0430\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0449\u0438\u043C \u043A\u0432\u0438\u0437\u043E\u043C!",
+    questions: [{
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0438\u043D\u0444\u043B\u044F\u0446\u0438\u044F?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u042D\u0442\u043E \u043F\u0440\u043E\u0446\u0435\u0441\u0441 \u0443\u043C\u0435\u043D\u044C\u0448\u0435\u043D\u0438\u044F \u043E\u0431\u0449\u0435\u0433\u043E \u0443\u0440\u043E\u0432\u043D\u044F \u0446\u0435\u043D \u043D\u0430 \u0442\u043E\u0432\u0430\u0440\u044B \u0438 \u0443\u0441\u043B\u0443\u0433\u0438 \u0432 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0435.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u042D\u0442\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u044F\u0442\u0438\u0439 \u0438 \u0443\u0440\u043E\u0432\u043D\u044F \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0439.",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u042D\u0442\u043E \u0441\u043D\u0438\u0436\u0435\u043D\u0438\u0435 \u0443\u0440\u043E\u0432\u043D\u044F \u0431\u0435\u0437\u0440\u0430\u0431\u043E\u0442\u0438\u0446\u044B \u0432 \u0441\u0442\u0440\u0430\u043D\u0435.",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u042D\u0442\u043E \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043E\u0431\u0449\u0435\u0433\u043E \u0443\u0440\u043E\u0432\u043D\u044F \u0446\u0435\u043D \u043D\u0430 \u0442\u043E\u0432\u0430\u0440\u044B \u0438 \u0443\u0441\u043B\u0443\u0433\u0438 \u0432 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0435 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C.",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0434\u0438\u0432\u0435\u0440\u0441\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u044F?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043D\u0430\u043B\u043E\u0433\u043E\u0432",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u0420\u0430\u0437\u043D\u043E\u043E\u0431\u0440\u0430\u0437\u0438\u0435 \u0438\u043D\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0439",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0441\u043F\u0440\u043E\u0441 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043D\u0430 \u0440\u044B\u043D\u043A\u0435?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u0421\u043F\u0440\u043E\u0441 - \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C, \n\t\t\t\t\t\t\u0430 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 - \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043F\u043E\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043B\u0438 \u0445\u043E\u0442\u044F\u0442 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u0421\u043F\u0440\u043E\u0441 - \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043F\u043E\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043B\u0438 \u0445\u043E\u0442\u044F\u0442 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438, \u0430 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \n\t\t\t\t\t\t- \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C.",
+        correct: true
+      }, {
+        id: 2,
+        value: "\u0421\u043F\u0440\u043E\u0441 - \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u0445\u043E\u0442\u044F\u0442 \u043F\u0440\u043E\u0434\u0430\u0442\u044C, \u0430 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 - \n\t\t\t\t\t\t\u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u043E\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043A\u0443\u043F\u0438\u0442\u044C.",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u0421\u043F\u0440\u043E\u0441 - \u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438, \u0430 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435 - \n\t\t\t\t\t\t\u044D\u0442\u043E \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0442\u043E\u0432\u0430\u0440\u043E\u0432 \u0438 \u0443\u0441\u043B\u0443\u0433, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u043E\u0442\u0440\u0435\u0431\u0438\u0442\u0435\u043B\u0438 \u0445\u043E\u0442\u044F\u0442 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438.",
+        correct: false
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0438\u043D\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0438 \u0432 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0435?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u042D\u0442\u043E \u0440\u0430\u0441\u0445\u043E\u0434\u044B \u0433\u043E\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0430 \u043D\u0430 \u0441\u043E\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u0438 \u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D\u0438\u0435.",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u042D\u0442\u043E \u0434\u0435\u043D\u044C\u0433\u0438, \u0432\u043B\u043E\u0436\u0435\u043D\u043D\u044B\u0435 \u0432 \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435 \u0444\u0438\u043D\u0430\u043D\u0441\u043E\u0432\u044B\u0435 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u044B \u0434\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F \u043F\u0440\u0438\u0431\u044B\u043B\u0438.",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u042D\u0442\u043E \u0434\u0435\u043D\u0435\u0436\u043D\u044B\u0435 \u0441\u0440\u0435\u0434\u0441\u0442\u0432\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043B\u044E\u0434\u0438 \u0445\u0440\u0430\u043D\u044F\u0442 \u0432 \u0431\u0430\u043D\u043A\u0430\u0445.",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u042D\u0442\u043E \u043A\u0430\u043F\u0438\u0442\u0430\u043B, \u0432\u043B\u043E\u0436\u0435\u043D\u043D\u044B\u0439 \u0432 \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u044F\u0442\u0438\u044F, \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \n\t\t\t\t\t\t\u0438 \u0434\u0440\u0443\u0433\u0438\u0435 \u0430\u043A\u0442\u0438\u0432\u044B \u0441 \u0446\u0435\u043B\u044C\u044E \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u0430 \u0438 \u043F\u0440\u0438\u0431\u044B\u043B\u0438.",
+        correct: true
+      }]
+    }]
+  }, {
+    id: 3,
+    name: 'Менеджмент',
+    time: 7200,
+    descr: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C \u0432 \u043A\u0432\u0438\u0437 \u043F\u043E \u043C\u0435\u043D\u0435\u0434\u0436\u043C\u0435\u043D\u0442\u0443! \n\t\t\u0412 \u044D\u0442\u043E\u043C \u0443\u0432\u043B\u0435\u043A\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u043C \u043A\u0432\u0438\u0437\u0435 \u0432\u044B \u0441\u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u043C\u0435\u043D\u0435\u0434\u0436\u043C\u0435\u043D\u0442\u0430 \u0438 \u043B\u0438\u0434\u0435\u0440\u0441\u0442\u0432\u0430. \n\t\t\u0412\u0430\u043C \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442 \u043E\u0442\u0432\u0435\u0442\u0438\u0442\u044C \u043D\u0430 \u0442\u0440\u0438 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u0445 \u0432\u043E\u043F\u0440\u043E\u0441\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043A\u0430\u0441\u0430\u044E\u0442\u0441\u044F \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0445 \u0430\u0441\u043F\u0435\u043A\u0442\u043E\u0432 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0431\u0438\u0437\u043D\u0435\u0441\u043E\u043C, \n\t\t\u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E\u0433\u043E \u043B\u0438\u0434\u0435\u0440\u0441\u0442\u0432\u0430, \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u0438 \u0438 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432. \n\t\t\u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0438 \u0437\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u0431\u043B\u0430\u0441\u0442\u0438 \u043C\u0435\u043D\u0435\u0434\u0436\u043C\u0435\u043D\u0442\u0430, \u0440\u0430\u0441\u0448\u0438\u0440\u044C\u0442\u0435 \u0441\u0432\u043E\u0438 \u043D\u0430\u0432\u044B\u043A\u0438 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u0438\n\t\t\u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0430\u0439\u0442\u0435\u0441\u044C \u044D\u0442\u0438\u043C \u0437\u0430\u0445\u0432\u0430\u0442\u044B\u0432\u0430\u044E\u0449\u0438\u043C \u043A\u0432\u0438\u0437\u043E\u043C!",
+    questions: [{
+      question: "\u0427\u0442\u043E \u0442\u0430\u043A\u043E\u0435 SWOT-\u0430\u043D\u0430\u043B\u0438\u0437?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u0418\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0435\u043A\u0442\u0430\u043C\u0438",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041C\u0435\u0442\u043E\u0434 \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u044F \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u041C\u0435\u0442\u043E\u0434\u0438\u043A\u0430 \u043F\u0440\u0438\u043D\u044F\u0442\u0438\u044F \u043E\u043F\u0435\u0440\u0430\u0442\u0438\u0432\u043D\u044B\u0445 \u0440\u0435\u0448\u0435\u043D\u0438\u0439",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u0418\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u0430\u043D\u0430\u043B\u0438\u0437\u0430",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \u0442\u0435\u0440\u043C\u0438\u043D \"\u0434\u0435\u043B\u0435\u0433\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\"?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u041E\u0442\u043A\u0430\u0437 \u043E\u0442 \u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u0438",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041F\u043E\u0434\u043C\u0435\u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u0435\u0439",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0430 \u043F\u043E\u043B\u043D\u043E\u043C\u043E\u0447\u0438\u0439 \u0438 \u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0430\u043C",
+        correct: true
+      }, {
+        id: 3,
+        value: "\u0417\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u044C \u043E\u0442 \u0432\u043D\u0435\u0448\u043D\u0438\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432",
+        correct: false
+      }, {
+        id: 4,
+        value: "\u041F\u0435\u0440\u0435\u043D\u043E\u0441 \u0441\u0440\u043E\u043A\u043E\u0432 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u0437\u0430\u0434\u0430\u0447\u0438",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0441\u043E\u0431\u043E\u0439 \"\u0442\u0438\u043C\u0431\u0438\u043B\u0434\u0438\u043D\u0433\"?",
+      type: "options",
+      answers: [{
+        id: 0,
+        value: "\u0414\u043E\u0432\u0435\u0440\u0438\u0435 \u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u0447\u0435\u0441\u0442\u0432\u043E",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435 \u0437\u0430\u0440\u043F\u043B\u0430\u0442\u044B",
+        correct: false
+      }, {
+        id: 2,
+        value: "\u041A\u043E\u043D\u0444\u043B\u0438\u043A\u0442\u043D\u043E\u0435 \u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u041C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F \u0434\u043B\u044F \u043A\u043E\u043C\u0430\u043D\u0434\u044B",
+        correct: true
+      }]
+    }, {
+      question: "\u0427\u0442\u043E \u043E\u0437\u043D\u0430\u0447\u0430\u0435\u0442 \u0442\u0435\u0440\u043C\u0438\u043D \"\u044D\u043C\u043F\u043E\u0432\u0435\u0440\u043C\u0435\u043D\u0442\" (empowerment) \u0432 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438 \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0439?",
+      type: "text",
+      answers: [{
+        id: 0,
+        value: "\u041C\u0435\u0442\u043E\u0434\u0438\u043A\u0430 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442\u043D\u043E\u0433\u043E \u043F\u043E\u0432\u0435\u0434\u0435\u043D\u0438\u044F",
+        correct: false
+      }, {
+        id: 1,
+        value: "\u041F\u0435\u0440\u0435\u0434\u0430\u0447\u0430 \u043F\u043E\u043B\u043D\u043E\u043C\u043E\u0447\u0438\u0439 \u0438 \u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u0438 \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0430\u043C \u0434\u043B\u044F \u043F\u0440\u0438\u043D\u044F\u0442\u0438\u044F \u0440\u0435\u0448\u0435\u043D\u0438\u0439",
+        correct: true
+      }, {
+        id: 2,
+        value: "\u041C\u0435\u0442\u043E\u0434 \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043A\u043E\u043D\u043A\u0443\u0440\u0435\u043D\u0442\u043E\u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C\u044E \u043A\u043E\u043C\u0430\u043D\u0434\u044B",
+        correct: false
+      }, {
+        id: 3,
+        value: "\u041F\u0440\u0438\u043C\u0435\u043D\u0435\u043D\u0438\u0435 \u0438\u043D\u043D\u043E\u0432\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0439 \u0434\u043B\u044F \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438",
+        correct: false
+      }]
+    }]
+  }];
+
+  var App = /*#__PURE__*/function (_DOMHelper) {
+    _inherits(App, _DOMHelper);
+    var _super = _createSuper(App);
+    function App() {
+      _classCallCheck(this, App);
+      return _super.apply(this, arguments);
+    }
+    _createClass(App, [{
+      key: "init",
+      value: function init() {
+        this.renderStartPage();
+        this.renderTestsList();
+      }
+    }, {
+      key: "renderStartPage",
+      value: function renderStartPage() {
+        this.appInnerElement.innerHTML = "\n          <div class=\"test-start\">\n            <span>\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0435\u0441\u0442 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430</span>\n          </div>\n        ";
+      }
+    }, {
+      key: "renderTestsList",
+      value: function renderTestsList() {
+        var _this = this;
+        try {
+          DATA_TESTS.forEach(function (item) {
+            _this.sidebarLinksElement.insertAdjacentHTML('beforeend', "\n              <li class=\"sidebar__link\" data-test=\"".concat(item.id, "\"><span></span><a href=\"#\">").concat(item.name, "</a></li>\n            "));
+          });
+        } catch (error) {
+          console.error('Ошибка при редеринге списка тестов: ', error);
+        }
+      }
+    }]);
+    return App;
+  }(DOMHelper);
+  var appInstance = new App();
+
+  var UserResponses = /*#__PURE__*/function () {
+    function UserResponses() {
+      _classCallCheck(this, UserResponses);
+      this.localResults = {};
+    }
+    _createClass(UserResponses, [{
+      key: "setResponce",
+      value: function setResponce(questionIndex, answerIndex) {
+        this.localResults[questionIndex] = answerIndex;
+      }
+    }, {
+      key: "getResponce",
+      value: function getResponce(questionIndex) {
+        return this.localResults[questionIndex];
+      }
+    }, {
+      key: "resetResponce",
+      value: function resetResponce() {
+        this.localResults = {};
+      }
+    }]);
+    return UserResponses;
+  }();
+  var userResponses = new UserResponses();
+
+  var Render = /*#__PURE__*/function (_DOMHelper) {
+    _inherits(Render, _DOMHelper);
+    var _super = _createSuper(Render);
+    function Render() {
+      _classCallCheck(this, Render);
+      return _super.apply(this, arguments);
+    }
+    _createClass(Render, [{
+      key: "renderDescription",
+      value: function renderDescription(testObj) {
+        this.appInnerElement.innerHTML = "\n        <div class=\"top-panel\">\n            <div class=\"top-panel__inner\">\n            <div class=\"top-panel__left\">\n                <span class=\"top-panel__descr\">\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435</span>\n            </div>\n            </div>\n        </div>\n        <div class=\"test-mobile-content\">\n            <div class=\"test-mobile-content__mobile-info\">\n            <h2>".concat(testObj.name, "</h2>\n            </div>\n        </div>\n        <div class=\"test-descr\">\n            <p>").concat(testObj.descr, "</p>\n            <div class=\"test-descr-buttons\">\n            <a class=\"btn-primary btn-start\" data-test=\"").concat(testObj.id, "\" href=\"#\">\u041D\u0430\u0447\u0430\u0442\u044C</a>\n            <a class=\"btn-secondary btn-cancel\" href=\"#\">\u041E\u0442\u043C\u0435\u043D\u0430</a>\n            </div>\n        </div>");
+      }
+    }, {
+      key: "renderTest",
+      value: function renderTest(testObj) {
+        this.appInnerElement.innerHTML = "\n\t\t<div class=\"top-panel\">\n\t\t\t<div class=\"top-panel__inner\">\n\t\t\t\t<div class=\"top-panel__left\">\n\t\t\t\t\t<a class=\"top-panel__exit js-modal-open\" data-modal=\"modal-exit\">\u0412\u044B\u0445\u043E\u0434</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"top-panel__center\">\n\t\t\t\t\t<span class=\"top-panel__test-name\">".concat(testObj.name, "</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"top-panel__right\">\n\t\t\t\t\t<div class=\"top-panel__reset\">\n\t\t\t\t\t\t<span class=\"top-panel__reset-btn\">\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u0432\u0441\u0435 \u043E\u0442\u0432\u0435\u0442\u044B</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"top-panel__mobile-column\">\n\t\t\t\t\t\t<div class=\"top-panel__progress\">\n\t\t\t\t\t\t\t<span>0/").concat(testObj.questions.length, "</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"top-panel__timer\">\n\t\t\t\t\t\t\t<span>00:00:00</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"test-mobile-content\">\n\t\t\t<div class=\"test-mobile-content__mobile-info\">\n\t\t\t\t<h2>").concat(testObj.name, "</h2>\n\t\t\t\t<a class=\"js-modal-open\" data-modal=\"modal-exit\">\u0412\u044B\u0445\u043E\u0434</a>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"test\">\n\t\t\t\n\t\t</div>\n\t\t<div class=\"bottom-panel\">\n\t\t\t<a class=\"btn-primary btn-primary-outline btn-get-results\" href=\"#\">\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C</a>\n\t\t</div>");
+      }
+    }, {
+      key: "renderQuestions",
+      value: function renderQuestions(testObj) {
+        var test = this.appElement.querySelector('.test');
+        test.innerHTML = testObj.questions.map(function (question, index) {
+          var answers = question.answers.map(function (answer) {
+            return "\n                  <label class=\"question__answer\">\n                    <input class=\"question__answer-input\" type=\"radio\" name=\"".concat(index, "\" value=\"").concat(answer.id, "\">\n                    <span class=\"radio-custom\"></span>\n                    ").concat(answer.value, "\n                  </label>\n                ");
+          }).join('');
+          return "\n              <div class=\"question question--".concat(question.type, "\">\n                <div class=\"question__content\">\n                  <span class=\"question__number\">").concat(index + 1, ". </span>\n                  <span class=\"question__text\">").concat(question.question, "</span>\n                </div>\n                <div class=\"question__answers\">\n                  <form class=\"question__answers-list\">").concat(answers, "</form>\n                </div>\n              </div>\n            ");
+        }).join('');
+      }
+    }, {
+      key: "renderResults",
+      value: function renderResults(testObj, results) {
+        var keys = Object.keys(results);
+        this.appInnerElement.innerHTML = "\n          <div class=\"top-panel\">\n          <div class=\"top-panel__inner\">\n          <div class=\"top-panel__left\">\n              <a class=\"top-panel__exit js-modal-open\" data-modal=\"modal-exit\">\u0412\u044B\u0445\u043E\u0434</a>\n          </div>\n          <div class=\"top-panel__center\">\n              <span class=\"top-panel__test-name\">".concat(testObj.name, "</span>\n          </div>\n              </div>\n          </div>\n          <div class=\"test-mobile-content\">\n          <div class=\"test-mobile-content__mobile-info\">\n              <h2>").concat(testObj.name, "</h2>\n              <a class=\"js-modal-open\" data-modal=\"modal-exit\">\u0412\u044B\u0445\u043E\u0434</a>\n          </div>\n            </div>\n          <div class=\"test-results\">\n            <div class=\"test-results__info\">\n              <h2>\u0422\u0435\u0441\u0442 \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043D</h2>\n              <p>\u0412\u044B \u043E\u0442\u0432\u0435\u0442\u0438\u043B\u0438 \u043D\u0430 <span class=\"test-results__answered\">").concat(keys.length, "</span> \u0438\u0437\n                <span class=\"test-results__total\">").concat(testObj.questions.length, "</span> \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432.</p>\n            </div>\n            <div class=\"test-results__list\">\n              <p class=\"test-results__heading\">\u0412\u0430\u0448\u0438 \u043E\u0442\u0432\u0435\u0442\u044B</p>\n            </div>\n          </div>\n          <div class=\"bottom-panel\">\n            <a class=\"btn-primary btn-primary-outline btn-restart\" href=\"#\">\u041F\u0440\u043E\u0439\u0442\u0438 \u0435\u0449\u0435 \u0440\u0430\u0437</a>\n          </div>");
+        var resultsArea = this.appElement.querySelector('.test-results__list');
+        var questions = testObj.questions;
+        questions.forEach(function (item, i) {
+          var trueAnswer = '';
+          item.answers.forEach(function (answer) {
+            if (answer.correct === true) trueAnswer = answer.value;
+          });
+          var userAnswerIndex = results[i];
+          var userAnswer = '';
+          if (typeof userAnswerIndex !== 'undefined') {
+            var userAnswerObject = item.answers[userAnswerIndex];
+            userAnswer = userAnswerObject ? userAnswerObject.value : 'Не ответили';
+          } else {
+            userAnswer = 'Не ответили';
+          }
+          resultsArea.insertAdjacentHTML('beforeend', "\n            <div class=\"test-results__item\">\n              <p class=\"test-results__question\">\n                <span class=\"test-results__question-number\">".concat(i + 1, ".</span>\n                <span class=\"test-results__question-text\">").concat(item.question, "</span>\n              </p>\n              <p class=\"test-results__correct-answer\">\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442:\n                <span class=\"test-results__correct-answer-text\">").concat(trueAnswer, "</span>\n              </p>\n              <p class=\"test-results__your-answer\">\u0412\u044B \u043E\u0442\u0432\u0435\u0442\u0438\u043B\u0438:\n                <span class=\"test-results__your-answer-text\">").concat(userAnswer, "</span>\n              </p>\n            </div>\n            "));
+        });
+      }
+    }, {
+      key: "renderIndicator",
+      value: function renderIndicator(currStep, testObj) {
+        var questionsIndicator = this.appElement.querySelector('.top-panel__progress span');
+        questionsIndicator.textContent = "".concat(currStep, "/").concat(testObj.questions.length);
+      }
+    }]);
+    return Render;
+  }(DOMHelper);
+  var renderInstance = new Render();
+
+  var Utility = /*#__PURE__*/function (_DOMHelper) {
+    _inherits(Utility, _DOMHelper);
+    var _super = _createSuper(Utility);
+    function Utility() {
+      _classCallCheck(this, Utility);
+      return _super.apply(this, arguments);
+    }
+    _createClass(Utility, [{
+      key: "hideSidebar",
+      value: function hideSidebar(sidebarElement) {
+        sidebarElement.classList.remove('sidebar--active');
+      }
+    }, {
+      key: "showSidebar",
+      value: function showSidebar(sidebarElement) {
+        sidebarElement.classList.add('sidebar--active');
+      }
+    }, {
+      key: "openModal",
+      value: function openModal(modalElement) {
+        modalElement.classList.add('modal--active');
+      }
+    }, {
+      key: "closeModal",
+      value: function closeModal(modalElement) {
+        modalElement.classList.remove('modal--active');
+      }
+    }, {
+      key: "getCurrentTest",
+      value: function getCurrentTest() {
+        var activeTest = this.appElement.querySelector('.sidebar__link--active');
+        return DATA_TESTS[activeTest.dataset.test];
+      }
+    }, {
+      key: "resetAnswers",
+      value: function resetAnswers() {
+        var checkedInputs = this.appElement.querySelectorAll('.question__answer-input');
+        for (var i = 0; i < checkedInputs.length; i++) {
+          checkedInputs[i].checked = false;
+        }
+        userResponses.resetResponce();
+      }
+    }, {
+      key: "startTimer",
+      value: function startTimer(duration, displayElem) {
+        var timer = duration;
+        var currTest = this.getCurrentTest();
+        var timerInterval = setInterval(function () {
+          var hours = Math.floor(timer / 3600);
+          var minutes = Math.floor(timer % 3600 / 60);
+          var seconds = timer % 60;
+          displayElem.textContent = "".concat(hours < 10 ? '0' : '').concat(hours, ":").concat(minutes < 10 ? '0' : '').concat(minutes, ":").concat(seconds < 10 ? '0' : '').concat(seconds);
+          timer--;
+          if (timer < 0) {
+            clearInterval(timerInterval);
+            renderInstance.renderResults(currTest, userResponses.localResults);
+          }
+        }, 1000);
+      }
+    }]);
+    return Utility;
+  }(DOMHelper);
+  var utilityInstance = new Utility();
+
+  var Handlers = /*#__PURE__*/function (_DOMHelper) {
+    _inherits(Handlers, _DOMHelper);
+    var _super = _createSuper(Handlers);
+    function Handlers() {
+      var _this;
+      _classCallCheck(this, Handlers);
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      _this = _super.call.apply(_super, [this].concat(args));
+      _defineProperty(_assertThisInitialized(_this), "changeAnswer", function (event) {
+        if (event.target.classList.contains('question__answer-input')) {
+          userResponses.setResponce(event.target.name, event.target.value);
+          var currStep = Object.keys(userResponses.localResults).length;
+          var currTest = utilityInstance.getCurrentTest();
+          renderInstance.renderIndicator(currStep, currTest);
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "documentClick", function (event) {
+        var target = event.target;
+
+        // Sidebar
+
+        if (target.classList.contains('hamburger')) {
+          var sidebarIsActive = _this.sidebarElement.classList.contains('sidebar--active');
+          if (sidebarIsActive) {
+            utilityInstance.hideSidebar(_this.sidebarElement);
+            localStorage.setItem('sidebarState', JSON.stringify({
+              isOpen: false
+            }));
+          } else {
+            utilityInstance.showSidebar(_this.sidebarElement);
+            localStorage.setItem('sidebarState', JSON.stringify({
+              isOpen: true
+            }));
+          }
+        }
+        if (target.classList.contains('sidebar__link') && window.innerWidth < 769) {
+          utilityInstance.hideSidebar(_this.sidebarElement);
+        }
+
+        // Test Description
+
+        if (target.classList.contains('sidebar__link')) {
+          var test = _this.appInnerElement.querySelector('.test');
+          var testResults = _this.appInnerElement.querySelector('.test-results');
+          if (test || testResults) {
+            var modal = document.getElementById('modal-exit');
+            utilityInstance.openModal(modal);
+            return;
+          }
+          var activeTest = _this.appElement.querySelector('.sidebar__link--active');
+          if (activeTest) activeTest.classList.remove('sidebar__link--active');
+          target.classList.add('sidebar__link--active');
+          var currTest = DATA_TESTS[target.dataset.test];
+          renderInstance.renderDescription(currTest);
+        }
+
+        // Cancel Button
+
+        if (target.classList.contains('btn-cancel')) {
+          event.preventDefault();
+          var _activeTest = _this.appElement.querySelector('.sidebar__link--active');
+          _activeTest.classList.remove('sidebar__link--active');
+          appInstance.renderStartPage();
+        }
+
+        // Starting Test
+
+        if (target.classList.contains('btn-start') || target.classList.contains('btn-restart')) {
+          event.preventDefault();
+          userResponses.resetResponce();
+          var _currTest = utilityInstance.getCurrentTest();
+          renderInstance.renderTest(_currTest);
+          renderInstance.renderQuestions(_currTest);
+          var timerElem = document.querySelector('.top-panel__timer');
+          utilityInstance.startTimer(_currTest.time, timerElem);
+        }
+
+        // Reset Answers
+        if (target.classList.contains('top-panel__reset-btn')) {
+          var _currTest2 = utilityInstance.getCurrentTest();
+          utilityInstance.resetAnswers();
+          renderInstance.renderIndicator(0, _currTest2);
+        }
+
+        // Results
+
+        if (target.classList.contains('btn-get-results')) {
+          event.preventDefault();
+          var _currTest3 = utilityInstance.getCurrentTest();
+          renderInstance.renderResults(_currTest3, userResponses.localResults);
+        }
+
+        // Modals
+
+        if (target.classList.contains('js-modal-open')) {
+          var modalId = target.dataset.modal;
+          var _modal = document.getElementById(modalId);
+          utilityInstance.openModal(_modal);
+        }
+        if (target.classList.contains('js-modal-close') || target.classList.contains('modal--active')) {
+          var activeModal = document.querySelector('.modal--active');
+          utilityInstance.closeModal(activeModal);
+        }
+      });
+      return _this;
+    }
+    return _createClass(Handlers);
+  }(DOMHelper);
+  var handlersInstance = new Handlers();
+
+  appInstance.init();
+
+  // Sidebar localStorage state
+
+  if (window.innerWidth > 768) {
+    try {
+      var savedState = localStorage.getItem('sidebarState');
+      var _JSON$parse = JSON.parse(savedState),
+        isOpen = _JSON$parse.isOpen;
+      if (isOpen) {
+        utilityInstance.showSidebar(domInstance.sidebarElement);
+      } else {
+        utilityInstance.hideSidebar(domInstance.sidebarElement);
+      }
+    } catch (error) {
+      localStorage.setItem('sidebarState', JSON.stringify({
+        isOpen: false
+      }));
+    }
+  }
+
+  // Event Listeners
+
+  domInstance.appElement.addEventListener('change', handlersInstance.changeAnswer);
+  document.addEventListener('click', handlersInstance.documentClick);
+
+})();
+//# sourceMappingURL=main.bundle.js.map

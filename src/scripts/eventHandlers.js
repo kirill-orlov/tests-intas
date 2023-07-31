@@ -80,7 +80,6 @@ class Handlers extends DOMHelper {
 		// Reset Answers
 		if (target.classList.contains('top-panel__reset-btn')) {
 			const currTest = utilityInstance.getCurrentTest()
-
 			utilityInstance.resetAnswers()
 			renderInstance.renderIndicator(0, currTest)
 		}
@@ -90,7 +89,6 @@ class Handlers extends DOMHelper {
 		if (target.classList.contains('btn-get-results')) {
 			event.preventDefault()
 			const currTest = utilityInstance.getCurrentTest()
-
 			renderInstance.renderResults(currTest, userResponses.localResults)
 		}
 
